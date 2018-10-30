@@ -1,2 +1,2 @@
 # blogarithms.github.io
-Jekyll page for blog posts by Aditya Ramesh - https://rameshaditya.com/
+Jekyll pages for blog posts by Aditya Ramesh - https://rameshaditya.com/
