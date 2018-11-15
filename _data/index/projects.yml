@@ -1,0 +1,9 @@
+- name: Visit My GitHub Profile!
+  descr: "If you're interested in my projects, visit my GitHub Profile! <br><br>
+
+
+  Some of them have been featured on Medium, others were built overnight, or under the influence of caffeine at a hackathon!
+  
+  "
+  image: pong.png
+  github: https://github.com/RameshAditya

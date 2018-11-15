@@ -1,0 +1,6 @@
+# skills section data
+
+label: Proficiency
+id : cs
+aspects: Motivation, C/C++, Python, HTML/CSS, JavaScript, MySQL
+percentage: 100, 85, 80, 70, 70, 65

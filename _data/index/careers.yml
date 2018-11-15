@@ -1,0 +1,16 @@
+# careers section data
+# if you don't have language feature(language.yml is empty), ignore "i18n" items
+- name: Cisco
+  link: http://www.cisco.com/
+  date: May 2018 - July 2018 #<i class="fa fa-clock-o" aria-hidden="true" title="Until Now"></i>
+  job: Software Engineering Internship
+
+- name: Topcoder
+  link: http://www.topcoder.com/
+  date: April 2018 - <i class="fa fa-clock-o" aria-hidden="true" title="Until Now"></i>
+  job: Algorithm Blogger
+
+- name: Deloitte
+  link: https://www.deloitte.com/
+  date: May 2017 - July 2017
+  job: Software Engineering Internship

@@ -1,0 +1,90 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.w3-btn {margin-bottom:10px;}
+</style>
+
+<h4>
+  I'm <a style="color: blue;" href="https://linkedin.com/in/AdityaRamesh1998/" target="_blank">Aditya Ramesh</a>, and I'm a CS Undergrad. 
+  <br> 
+  Former SWE Intern - Cisco (2018), Deloitte (2017). And I'm published on Topcoder.  
+  <br>
+  Visit my portfolio website for more info or to contact me - <a style="color: blue;" href="https://rameshaditya.com/" target="_blank">rameshaditya.com</a>
+</h4>
+<hr>
+
+<!-- <h3 style="display:inline;"> Tags:  &nbsp; &nbsp;</h3> -->
+<h5><b>Blog Post Tags - </b></h5>
+<p style="display: inline;">
+  <button class="w3-button w3-white w3-border w3-medium" onclick="location.href='/categories/#algorithm'"> Algorithm </button>
+  <button class="w3-button w3-white w3-border w3-medium" onclick="location.href='/categories/#development'"> Development </button>
+  <button class="w3-button w3-white w3-border w3-medium" onclick="location.href='/categories/#topcoder'"> Topcoder </button>
+  <button class="w3-button w3-white w3-border w3-medium" onclick="location.href='categories/#open%20source'"> Open Source </button>
+  <button class="w3-button w3-white w3-border w3-medium" onclick="location.href='/categories/#personal'"> Personal </button>
+</p>
+
+<hr>
+<!-- <p class="post-cat"> Categories: Algorithm | Development | Open Source </p> -->
+
+{% for post in site.posts %}
+<section class="post">
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        {{ post.date | date: "%-d %b %Y" | upcase }}
+      </span>
+      {% if post.categories.size > 0 %}
+      •
+      {% for cat in post.categories %}
+        <a class="post-cat" href="{{ site.url }}/categories/#{{ cat }}">{{ cat }}</a>
+        {% unless forloop.last %}
+        <span>/</span>
+        {% endunless %}
+      {% endfor %}
+      {% endif %}
+    </p>
+    <h4>
+      <a href="{{ site.url }}{{ post.url }}" class="post-title" title="{{ post.title | escape }}">{{ post.title }}</a>
+      {% if post.link %}
+      <a class="post-title-link" href="{{ post.link }}" target="_blank" title="{{ post.title | escape }}"><i class="fa fa-external-link"></i></a>
+      {% endif %}
+    </h4>
+
+    {% if post.author %}
+      {% assign author = site.data.authors[post.author] %}
+    {% else %}
+      {% assign author = site.owner %}
+    {% endif %}
+
+    </header>
+
+    {% if post.excerpt %}
+    <div class="post-description">
+      <p>
+        {{ post.excerpt }}
+      </p>
+    </div>
+    {% endif %}
+
+    {% if post.image.feature %}
+    <div class="post-image-feature">
+      <img src=
+      {% if post.image.feature contains 'http' %}
+      "{{ post.image.feature }}"
+      {% else %}
+      "{{ site.url }}/img/{{ post.image.feature }}"
+      {% endif %}
+      alt="{{ post.title | escape }} feature image">
+
+      {% if post.image.credit %}
+      <span class="image-credit">Photo Credit: <a href="{{ post.image.creditlink }}">{{ post.image.credit }}</a></span>
+      {% endif %}
+    </div><!-- /.image-wrap -->
+    {% endif %}
+
+</section>
+{% endfor %}
+
