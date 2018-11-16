@@ -140,7 +140,7 @@ That's also why you decrement ```X``` at the ```R+1```th index, as you want the 
 Now let's take a look at this data structure with an example algorithmic challenge.
 
 ```
-Aditya is standing in a room with (N) bulbs in a row. Initially all bulbs are off.
+Aditya is standing in a room with (N) bulbs in a row. Initially all bulbs are on.
 
 He decides to play a game.
 
