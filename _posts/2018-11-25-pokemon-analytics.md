@@ -131,7 +131,7 @@ plt.ylabel('Defense')
 
 Here's what we get!
 
-![](../../img/Pokemon/AttackvsDefense.png)
+![](../../img/Pokemon/AttackVsDefense.png)
 
 A few outliers. Let's label our points so we know which Pokemon is located at what co-ordinate.
 
@@ -141,7 +141,7 @@ for i, txt in enumerate(pokemons['Name']):
 
 ```
 
-![](../../img/Pokemon/AttackvsDefenseNames.png)
+![](../../img/Pokemon/AttackVsDefenseNames.png)
 
 And- Yikes. That's a lot of names.
 
