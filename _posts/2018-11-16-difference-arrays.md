@@ -3,6 +3,8 @@ layout: post
 title: "Difference Arrays And How They Can Make A Difference"
 excerpt: "Perform Invertible Range Updates in O(1) (also, sorry for that pun in the title)"
 categories: [algorithm]
+image:
+    feature: differencearray.jpg
 comments: true
 ---
 

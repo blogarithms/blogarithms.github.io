@@ -3,6 +3,8 @@ layout: post
 title: "Giving My First Technical Talk -- On Algorithms!"
 excerpt: "My experience giving a talk on algorithms and competitive programming, to CS undergrads from tier-3 colleges!"
 categories: [speaking, personal]
+image:
+    feature: firsttalk.jpg
 comments: true
 ---
 

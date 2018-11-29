@@ -3,6 +3,8 @@ layout: post
 title: "Powering Up With Binary Exponentiation"
 excerpt: "A quick and clever algorithm to exponentiate in logarithmic order of the exponent!"
 categories: [algorithm]
+image:
+    feature: binaryexpo.png
 comments: true
 ---
 <em>Off-topic, this is quite the hectic time for me. Between course projects, passion projects, make-a-thons, online programming contests (I'm losing my sanity thanks to CodeChef's September Long Contest), and university exams and classes, it's hard to catch some sleep, much less a breather, <strong>so the following article will be brief</strong>. Anyways, back on topic;

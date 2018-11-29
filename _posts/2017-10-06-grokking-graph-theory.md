@@ -3,6 +3,8 @@ layout: post
 title: "Grokking Graph Theory"
 excerpt: "Due to popular demand, let's deal with graph theory, from the bottom-up! (DP joke, sorry)"
 categories: [algorithm]
+image:
+    feature: grokkinggraph.jpg
 comments: true
 ---
 

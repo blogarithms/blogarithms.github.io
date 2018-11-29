@@ -3,6 +3,8 @@ layout: post
 title: "Exploring Binary Search"
 excerpt: "Identify a change in state of a bivalued function! This goes beyond the 'find-in-array' idea."
 categories: [algorithm]
+image:
+  feature: binarysearch.png
 comments: true
 ---
 I first learnt binary search back in 12th grade. At first it seemed like a nifty, little algorithm that only looked fancy and sounded like a bigger deal than what it deserved to be. Boy, was I wrong. <em>(shocking, I agree)</em>

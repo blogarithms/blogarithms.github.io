@@ -33,6 +33,8 @@ layout: default
 
 {% for post in site.posts %}
 <section class="post">
+
+
   <header class="post-header">
     <p class="post-meta">
       <span class="post-date">
@@ -84,9 +86,11 @@ layout: default
       {% if post.image.credit %}
       <span class="image-credit">Photo Credit: <a href="{{ post.image.creditlink }}">{{ post.image.credit }}</a></span>
       {% endif %}
+      
     </div><!-- /.image-wrap -->
     {% endif %}
 
+    <hr style="border: 0; height: 1px; background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);">
 </section>
 {% endfor %}
 
