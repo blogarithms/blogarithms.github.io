@@ -14,7 +14,7 @@ When my college sent us all an email consisting of the shortlisted candidates wh
 
 Upon scrolling through the ~400 shortlisted candidates, I found my name along with some other serious competition.
 
-> *The curtain rises.* - The voice at the back of my head.
+> *"The curtain rises."* - The voice at the back of my head.
 
 Drama aside, the interview process with D.E. Shaw was **extremely** intense and by the end, I felt like only the candidates who impressed **every** interviewer was offered an internship.
 
@@ -40,7 +40,7 @@ Oh boy, this final round. Oh boy.
 
 The questions spanned dynamic programming, tries, graph theory, clustering algorithms, data analytics, markov chains & NLP, operating systems, compilers, NP-hard problems, open ended discussion problems, and so much more -- it was insane.
 
-> "Sleep. Pls. God. Just. Let. Me. Sleep." - The voice at the back of my head.
+> *"Sleep. Pls. God. Just. Let. Me. Sleep."* - The voice at the back of my head.
 
 The three others and I were made to wait for about 30 minutes and then I was called in.
 
