@@ -32,11 +32,13 @@ kramdown:
 # Site Owner configuration
 ####################################
 #
+
+# SWE Intern Cisco '18, Deloitte '17 | Published Algorithm Blogger, Topcoder
 owner:
   name: Blogarithms
   avatar: leonids-logo.png
   job: "Aditya Ramesh's Blog"
-  bio: "SWE Intern Cisco '18, Deloitte '17 | Published Algorithm Blogger, Topcoder"
+  bio: "Incoming Intern - DE Shaw | Ex-Cisco, Deloitte | Algorithm Blogger, Topcoder"
   email: ramesh.aditya@gmail.com
   disqus-shortname:
   twitter: AdityaRamesh98
