@@ -39,7 +39,7 @@ Given an array whose elements are initially strictly increasing, and then strict
 
 You're the driver of a snowplower in a city whose roads are filled with snow. Houses are connected by roads and there always exists some route between any two houses in the city.
 
-Any time you pass through a road, you clear out all the snow in it and clean up the room. What is the minimum amount of snow you need to clear, to visit all houses?
+Any time you pass through a road, you clear out all the snow in it and clean up the road. What is the minimum amount of snow you need to clear, to visit all houses?
 
 > The idea is simple here. First, it's obvious that this is a graph theory problem. Roads are treated as edges, and the edge weights would be the amount of snow on each road. 
 > 
