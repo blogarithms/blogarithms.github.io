@@ -151,7 +151,7 @@ Accepted answer: Any permutation of the english alphabet where 'b' appears befor
 
 #### Question 3
 
-Given a string, find the largest 'factor' of the string. A 'factor' of a string is defined as a substring which can generate the original string by repeatedly concatenating to itself.
+Given a string, find the largest 'factor' of the string. A 'factor' of a string is defined as a substring which can generate the original string by repeatedly concatenating to itself in ```O(N)``` or better.
 
 Example, 'abababab' has the largest factor 'abab' as when written twice, it can generate the original string.
 
