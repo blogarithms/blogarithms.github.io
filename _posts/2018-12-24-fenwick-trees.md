@@ -2,7 +2,7 @@
 layout: post
 title: "Fenwick Trees!"
 excerpt: "A data structure often associated with range queries and invertible functions."
-categories: [development]
+categories: [algorithm]
 image:
     feature: 
 comments: true
