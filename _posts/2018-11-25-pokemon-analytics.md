@@ -4,9 +4,11 @@ title: "Playing With Pokemons -- The Data Science Way"
 excerpt: "Gotta Analyze & Visualize 'Em All!"
 categories: [development]
 image:
-    feature: playing_with_pokemons_cover.jpg
+    feature: 5pikachu-1gif.gif
 comments: true
 ---
+
+<!-- playing_with_pokemons_cover.jpg -->
 
 I've always loved anime.
 
