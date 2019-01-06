@@ -4,7 +4,7 @@ title: "Imposter Syndrome vs the Dunning-Kruger effect."
 excerpt: "You're (likely) a better engineer than you think you are."
 categories: [personal]
 image:
-    feature:
+    feature: imposter-banner.png
 comments: true
 ---
 
