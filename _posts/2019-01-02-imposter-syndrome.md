@@ -8,6 +8,8 @@ image:
 comments: true
 ---
 
+<meta property='og:image' content='../../img/imposter-banner.png'/>
+
 I've always wanted to write about this, because this has been a running thought in my head for almost years now. 
 
 So here goes!
