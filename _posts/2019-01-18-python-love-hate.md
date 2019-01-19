@@ -64,7 +64,7 @@ The Python developer community has published SO many wonderful modules, that I f
 
 *(Maybe I'll write an article on that, too in the future)*
 
-I've seen some super awesome python modules been developed by the community.
+I've seen some super awesome python modules being developed by the community.
 
 From defaultdict, to a python module dedicated to serving XKCD comics, to even <a href="https://github.com/ajalt/fuckitpy">an outrageously named error steamroller</a>, the community for python never disappoints.
 
