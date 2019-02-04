@@ -1,9 +1,32 @@
-- name: Visit My GitHub Profile!
-  descr: "If you're interested in my projects, visit my GitHub Profile! <br><br>
-
-
-  Some of them have been featured on Medium, others were built overnight, or under the influence of caffeine at a hackathon!
+- name: 
+  descr: "
+  I've built a bunch of stuff over the years.
+  <ul>
+    <li>This blog</li>
+    <li>An Image-to-ASCII-Art Generator</li>
+    <li>A Markov Chain that talks like Sherlock Holmes</li>
+    <li>A Digital Yellow Rubber Duck Chrome Extension</li>
+    <li>A Sublime Text Plugin to pull coding contest questions directly onto the editor</li>
+    <li>A crowdsourced lost pet locator platform (Web + Android app)</li>
+    <li>An IoT solution to alert the user when an intruder enters their room via Slack</li>
+    <li>A movie recommender using collaborative filtering, trained on public datasets</li>
+    <li>An algorithm for the autonomous traversal of a student-built Mars Rover</li>
+    <li>An emotion recognition algorithm</li>
+    <li>A text deanonymization algorithm</li>
+    <li>A script to de/encrypt secret text in images -- steganography</li>
+    <li>Automated WhatsApp to spam people who annoy me</li>
+    <li>A tic-tac-toe bot to win my games for me</li>
+  </ul>
   
+  <br><br>
+  Aside from these, I'm also responsible for setting algorithmic challenges for my own college's programming contests, and
+  developing efficient solutions and test cases so that other undergrads can try their hand at solving my own challenges.
+  
+  <br><br>
+  
+  <b> If you think I'm a good fit for your firm, feel free to reach out to me at <a href=\"mailto:ramesh.aditya@gmail.com\">
+  ramesh.aditya@gmail.com</a> </b>
+
   "
   image: pong.png
   github: https://github.com/RameshAditya
