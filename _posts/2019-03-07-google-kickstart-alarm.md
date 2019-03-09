@@ -8,7 +8,7 @@ image:
 comments: true
 ---
 
-> This article was originally published on Topcoder at: [https://www.topcoder.com/blog/problem-of-the-week-google-kickstart-alarm/](https://www.topcoder.com/blog/problem-of-the-week-google-kickstart-alarm/)
+> This article was originally published by me on Topcoder at: [https://www.topcoder.com/blog/problem-of-the-week-google-kickstart-alarm/](https://www.topcoder.com/blog/problem-of-the-week-google-kickstart-alarm/)
 
 Google recently launched the 2019 edition of their yearly Kick Start algorithmic contest series. 
 
