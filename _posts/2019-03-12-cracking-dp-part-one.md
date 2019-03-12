@@ -110,7 +110,7 @@ Now, we can make `denom` a global array as we're not changing it.
 
 This makes our function just have one parameter. The current value, `N`.
 
-Thus, we have an O(N) DP solution to this, as follows -
+Thus, we have an O(N*K) DP solution to this, as follows -
 
 ```python
 
