@@ -101,7 +101,7 @@ Yay!
 
 Now there are a couple of things we need to ensure we're handling, if we want to port this to DP.
 
-- No global variables should be modifed in the function
+- No global variables should be modified in the function
 - Simple, memorizable states (state-space reduction)
 
 And... I'd say that's it?
