@@ -3,7 +3,7 @@ layout: post
 title: "Traversing Segment Trees"
 excerpt: "Learn How To Perform Range Queries In Logarithmic Time With This Data Structure!"
 image:
-  feature: segmenttree.png
+  feature: 
 categories: [algorithm]
 comments: true
 ---

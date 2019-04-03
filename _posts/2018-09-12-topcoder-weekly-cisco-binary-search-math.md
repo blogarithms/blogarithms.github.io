@@ -5,7 +5,7 @@ excerpt: "An analysis of a tricky algorithmic challenge featured in a Topcoder c
 categories: [algorithm, topcoder]
 link: https://www.topcoder.com/blog/problem-of-the-week-ad-hoc-math-and-binary-search/
 image:
-    feature: ciscotc.png
+    feature: 
 comments: true
 ---
 

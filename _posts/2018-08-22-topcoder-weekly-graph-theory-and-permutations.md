@@ -5,7 +5,7 @@ excerpt: "An analysis of a algorithmic challenge on permutations, graph theory a
 categories: [algorithm, topcoder]
 link: https://www.topcoder.com/blog/problem-of-the-week-permutations-graph-theory-and-alphabets/
 image:
-    feature: blizzardtc.jpg
+    feature: 
 comments: true
 ---
 

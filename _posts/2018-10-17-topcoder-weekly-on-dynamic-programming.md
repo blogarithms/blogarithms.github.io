@@ -5,7 +5,7 @@ excerpt: "An analysis of a tricky algorithmic challenge featured in Topcoder on 
 categories: [algorithm, topcoder]
 link: https://www.topcoder.com/blog/problem-of-the-week-on-dynamic-programming/
 image:
-    feature: dp.png
+    feature: 
 comments: true
 ---
 

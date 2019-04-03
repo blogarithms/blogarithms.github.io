@@ -4,7 +4,7 @@ title: "Interviewing students on Algorithms for my college's ACM chapter."
 excerpt: "As a CS pre-final year undergrad, I get to be one of the 'gatekeepers' to my college's ACM chapter."
 categories: [algorithm, personal]
 image:
-    feature: acm-interviews.jpg
+    feature:
 comments: true
 ---
 

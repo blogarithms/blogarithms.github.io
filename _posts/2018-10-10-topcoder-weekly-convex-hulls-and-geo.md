@@ -5,7 +5,7 @@ excerpt: "An analysis of a tricky algorithmic challenge featured in Topcoder on 
 categories: [algorithm, topcoder]
 link: https://www.topcoder.com/blog/problem-of-the-week-convex-hulls-and-geometry/
 image:
-    feature: convexhull.png
+    feature:
 comments: true
 ---
 

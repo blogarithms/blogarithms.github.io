@@ -4,7 +4,7 @@ title: "Why I Think Every Developer Should Blog"
 excerpt: "Title Says It All."
 categories: [personal]
 image:
-    feature: whyblog.jpg
+    feature: 
 comments: true
 ---
 

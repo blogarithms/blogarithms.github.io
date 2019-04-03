@@ -4,7 +4,7 @@ title: "Playing With Pokemons -- The Data Science Way"
 excerpt: "Gotta Analyze & Visualize 'Em All!"
 categories: [development]
 image:
-    feature: 5pikachu-1gif.gif
+    feature: 
 comments: true
 ---
 

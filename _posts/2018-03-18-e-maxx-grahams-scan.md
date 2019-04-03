@@ -5,7 +5,7 @@ excerpt: "Another Open Source Algorithm Translation Of Mine For The Famous Algo 
 categories: [algorithm, open source]
 link: https://cp-algorithms.com/geometry/grahams-scan-convex-hull.html
 image:
-    feature: convexhull.png
+    feature: 
 comments: true
 ---
 

@@ -4,7 +4,7 @@ title: "Tackling Tries!"
 excerpt: "Efficient String Searching In A Dictionary Of Words, How Facebook Searches In Its Database, And More!"
 categories: [algorithm]
 image:
-     feature: tries.png
+     feature: 
 comments: true
 ---
 <i>Hi! My 4th semester has just started, so I'm trying to type out as many articles ahead of time so that I don't have to keep my large (and partially imaginary) audience waiting. (Shh)</i>

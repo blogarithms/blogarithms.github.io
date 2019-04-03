@@ -4,7 +4,7 @@ title: "Why I love and hate Python."
 excerpt: "I swing back and forth with my feelings for Python. Here's why."
 categories: [personal, development]
 image:
-    feature: python-carbon.png
+    feature: 
 comments: true
 ---
 

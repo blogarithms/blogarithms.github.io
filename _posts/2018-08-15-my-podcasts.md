@@ -4,7 +4,7 @@ title: "The Podcast Experiment"
 excerpt: "I'm experimenting with podcasts!"
 categories: [personal]
 image:
-    feature: podcasts.jpg
+    feature: 
 comments: true
 ---
 

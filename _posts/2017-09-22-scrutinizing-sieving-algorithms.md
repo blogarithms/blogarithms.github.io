@@ -4,7 +4,7 @@ title: "Scrutinizing Sieving Algorithms"
 excerpt: "Implement the mathematical sieve of eratosthenes to identify the primality of numbers in O(nlognloglogn)!"
 categories: [algorithm]
 image:
-     feature: sieve.jpg
+     feature:
 comments: true
 ---
 <i>Ah, sieving. This is a stroll down memory lane for me, as nearly 10 months ago, the Sieve of Eratosthenes was the first algorithm I had to learn myself, while attempting to solve a question on SPOJ. But anyways, let's jump right in.</i>
