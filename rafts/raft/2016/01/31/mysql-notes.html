@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MySQL Syntax Notes</title>
+  <meta name="description" content="Notes taken when reviewing some fundamental yet useful MySQL commands.Some commands are basic operations while others might require a bit more understanding ...">
+
+  <link rel="stylesheet" href="http://localhost:4000/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+  <link rel="shortcut icon" type="image/x-icon" href="http://localhost:4000/favicon.ico?">
+  <link rel="canonical" href="http://localhost:4000/2016/01/31/mysql-notes.html">
+  <link rel="alternate" type="application/rss+xml" title="Yi Xia" href="http://localhost:4000/feed.xml" />
+  
+</head>
+
+
+  <body>
+
+    <div class="container-fluid" id="main-layout">
+      <div class="sidebar col-sm-12 col-md-3">
+        
+
+<div class="header">
+
+  
+  <div class="row visible-md-block visible-lg-block">
+    <img class="author-avatar" src="http://localhost:4000/img/avatar.jpg" alt="yi xia">
+  </div>
+  
+  <div class="row">
+    <a href="http://localhost:4000/" class="brand-title">Yi Xia</a>
+    <span class="brand-tagline">Small blog for something big.</span>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+        </li>
+        
+        <!-- test different order -->
+        <li class="nav-item">
+          <a href="http://localhost:4000/resume">Resume</a>
+          <span>/</span>
+        </li>
+        <li class="nav-item">
+          <a href="http://localhost:4000/archive">Archive</a>
+          <span>/</span>
+        </li>
+        <li class="nav-item">
+          <a href="http://localhost:4000/updates">Updates</a>
+          <span>/</span>
+        </li>
+        <li class="nav-item">
+          <a href="http://localhost:4000/tags">Categories</a>
+        </li>
+
+        <!--
+         
+        <li class="nav-item">
+          <a href="http://localhost:4000/archive/">Archive</a> <span>/</span>
+        </li>
+                
+        <li class="nav-item">
+          <a href="http://localhost:4000/resume/">Resume</a> <span>/</span>
+        </li>
+          
+        <li class="nav-item">
+          <a href="http://localhost:4000/tags/">Tags</a> <span>/</span>
+        </li>
+          
+        <li class="nav-item">
+          <a href="http://localhost:4000/updates/">Updates</a> <span>/</span>
+        </li>
+           
+        -->
+        
+      </ul>
+    </nav>
+    <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('yxia921@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    
+    <li><a href="http://facebook.com/bao571" class="social-link-item" target="_blank"><i class="fa fa-fw fa-facebook"></i></a></li>
+    <li><a href="http://plus.google.com/+YiXia571" class="social-link-item" target="_blank"><i class="fa fa-fw fa-google-plus"></i></a></li>
+    <li><a href="http://linkedin.com/in/hiyixia" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    <li><a href="http://github.com/geeknerd" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    <li><a href="http://www.weibo.com/geeknerdlab" class="social-link-item" target="_blank"><i class="fa fa-fw fa-weibo"></i></a></li>
+    
+    
+  </ul>
+</div>
+
+  </div>
+
+</div>
+
+      </div>
+      <div class="content col-sm-12 col-md-9">
+        <!--add a go-back button-->
+<a class="btn" href= "javascript:history.back()" >
+  Back
+</a>
+
+<!--show post image if exists-->
+
+<div class="post-image-feature">
+  <img class="feature-image" src=
+  
+  "http://localhost:4000/img/mysql.jpg"
+  
+  alt="MySQL Syntax Notes feature image">
+
+  
+</div><!-- /.image-wrap -->
+
+
+<div class="post">
+  <header class="post-header">
+    <h2>MySQL Syntax Notes</h2>
+    <p class="post-meta">Jan 31, 2016</p>
+  </header>
+
+  <article class="post-content">
+    <p>Notes taken when reviewing some fundamental yet useful MySQL commands.</p>
+
+<p>Some commands are basic operations while others might require a bit more understanding and could be unexpectedly helpful during specific scenario.</p>
+
+<!--more-->
+
+<ul>
+  <li>When creating a database, the default behavior of case sensitivity is set by the collation used. Changing a collation using a query could only use the same <code class="highlighter-rouge">CHARACTER SET</code>. 
+To use a case sensitive wildcard in a <code class="highlighter-rouge">SELECT</code> query, it is simpler to use <code class="highlighter-rouge">BINARY</code> operator after the <code class="highlighter-rouge">LIKE</code>. Like the one below,</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="n">prod_name</span><span class="p">,</span> <span class="n">prod_price</span><span class="p">,</span> <span class="n">prod_id</span> <span class="k">FROM</span> <span class="n">products</span> 
+<span class="k">WHERE</span> <span class="n">prod_name</span> <span class="k">LIKE</span> <span class="n">BINARY</span><span class="s1">'%Anvil%'</span>
+<span class="k">ORDER</span> <span class="k">BY</span> <span class="n">prod_name</span><span class="p">;</span></code></pre></figure>
+
+<p>The result is:</p>
+
+<p><img src="http://localhost:4000/img/mysql-cs.png" alt="MySQL CS" /></p>
+
+<ul>
+  <li>
+    <p>It is important to note that, in addition to matching one or more characters, <code class="highlighter-rouge">%</code> also matches zero characters. <code class="highlighter-rouge">%</code> represents zero, one, or more characters at the specified location in the search pattern.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">BINARY</code> works the same in a regular expression match. Like:</p>
+  </li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">WHERE</span> <span class="n">prod_name</span> <span class="n">REGEXP</span> <span class="n">BINARY</span> <span class="s1">'JetPack .000'</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">^</code> will negate everything in the <code class="highlighter-rouge">[]</code>. Therefore, <code class="highlighter-rouge">[^123]</code> will match characters other than 1 and 2 and 3. Same as <code class="highlighter-rouge">[^1-3]</code>.</li>
+</ul>
+
+<p>Omitting <code class="highlighter-rouge">FROM</code> clause after <code class="highlighter-rouge">SELECT</code> simply tests the function and calculation.</p>
+
+<ul>
+  <li><strong>SOUNDEX</strong> matches patterns that sound similar to the specified value, like the following:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span>
+<span class="k">FROM</span> <span class="n">customers</span>
+<span class="k">WHERE</span> <span class="n">Soundex</span><span class="p">(</span><span class="n">cust_contact</span><span class="p">)</span> <span class="o">=</span> <span class="n">Soundex</span><span class="p">(</span><span class="s1">'Y Lie'</span><span class="p">);</span></code></pre></figure>
+
+<p><img src="http://localhost:4000/img/mysql-sex.png" alt="MySQL SoundEX" /></p>
+
+<ul>
+  <li>To use a full-text search, specify <code class="highlighter-rouge">FULLTEXT(&lt;column_name&gt;)</code> in <code class="highlighter-rouge">CREATE TABLE</code> query and set <code class="highlighter-rouge">ENGINE=MyISAM</code>.</li>
+</ul>
+
+<p>Use <code class="highlighter-rouge">BINARY</code> mode for case sensitive search.</p>
+
+<p>Syntax is as:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">note_text</span> <span class="k">FROM</span> <span class="n">productnotes</span> <span class="k">WHERE</span> <span class="k">Match</span><span class="p">(</span><span class="n">note_text</span><span class="p">)</span> <span class="n">Against</span><span class="p">(</span><span class="s1">'rabbit'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Use <code class="highlighter-rouge">WITH QUERY EXPANSION</code> to full-text search for related rows based on first search for the keyword.</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">note_text</span> 
+<span class="k">FROM</span> <span class="n">productnotes</span> 
+<span class="k">WHERE</span> <span class="k">Match</span><span class="p">(</span><span class="n">note_text</span><span class="p">)</span> <span class="n">Against</span><span class="p">(</span><span class="s1">'anvils'</span> <span class="k">WITH</span> <span class="n">QUERY</span> <span class="n">EXPANSION</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">IN BOOLEAN MODE</code> can include word, exclude word, modify word’s ranking and search phrase in full-text search.</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span> <span class="n">note_text</span>
+<span class="k">FROM</span> <span class="n">productnotes</span>
+<span class="k">WHERE</span> <span class="k">MATCH</span><span class="p">(</span><span class="n">note_text</span><span class="p">)</span> <span class="n">AGAINST</span><span class="p">(</span><span class="s1">'+safe -rope* +(&lt;combination)'</span> <span class="k">IN</span> <span class="n">BOOLEAN</span> <span class="k">MODE</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>This search matches words safe and combination, lowering the ranking of the latter, and excludes any words that start with “rope”.</p>
+
+<ul>
+  <li>
+    <p>Use <code class="highlighter-rouge">LOW_PRIORITY</code> in <code class="highlighter-rouge">INSERT</code>, <code class="highlighter-rouge">UPDATE</code> and <code class="highlighter-rouge">DELETE</code> statements to lower the priority of the statements so they don’t affect performance.</p>
+  </li>
+  <li>
+    <p>Use <code class="highlighter-rouge">IGNORE</code> to continue updating table even error occurs. Such as:</p>
+  </li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="k">IGNORE</span> <span class="n">customers</span>
+<span class="k">SET</span> <span class="n">cust_name</span> <span class="o">=</span> <span class="s1">'The Fudds'</span><span class="p">,</span>
+    <span class="n">cust_email</span> <span class="o">=</span> <span class="s1">'elmer@fudd.com'</span>
+<span class="k">WHERE</span> <span class="n">cust_id</span> <span class="o">=</span> <span class="mi">10005</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>Every row in a table must have a unique primary key value. If a single column is used for the primary key, it must be unique; if multiple columns are used, the combination of them must be unique.</p>
+  </li>
+  <li>Use views to reuse SQL statements and simplify complex SQL operations.</li>
+  <li>Views contain no data themselves, the data are retrieved from other tables. Updating views essentially is updating the original table.</li>
+  <li>Performace will degrade if views contain complex statemtns like multiple joins and filters. 
+Example of view:</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">VIEW</span> <span class="n">productcustomers</span> <span class="k">AS</span>
+<span class="k">SELECT</span> <span class="n">cust_name</span><span class="p">,</span> <span class="n">cust_contact</span><span class="p">,</span> <span class="n">prod_id</span> 
+<span class="k">FROM</span> <span class="n">customers</span> <span class="k">AS</span> <span class="k">c</span> <span class="k">JOIN</span> <span class="n">orders</span> <span class="k">AS</span> <span class="n">o</span>
+<span class="k">ON</span> <span class="k">c</span><span class="p">.</span><span class="n">cust_id</span> <span class="o">=</span> <span class="n">o</span><span class="p">.</span><span class="n">cust_id</span>
+<span class="k">JOIN</span> <span class="n">orderitems</span> <span class="k">AS</span> <span class="n">oi</span> <span class="k">ON</span> <span class="n">o</span><span class="p">.</span><span class="n">order_num</span> <span class="o">=</span> <span class="n">oi</span><span class="p">.</span><span class="n">order_num</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Procedure can be used to store one of more MySQL statements for future use. More or less like the functions in Java.</li>
+  <li>Procudures execute faster than individual SQL statements, simplify complex operations and ensure data integrity.</li>
+  <li>Simplicity, Security, and Performance.</li>
+  <li>To use a command line utility, temporary delimiter should be used to overwrite <code class="highlighter-rouge">;</code> as follows:</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DELIMITER</span> <span class="o">//</span>
+<span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="n">productpricing</span><span class="p">(</span>
+<span class="k">OUT</span> <span class="n">p1</span> <span class="n">DECIMAL</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<span class="k">OUT</span> <span class="n">p2</span> <span class="n">DECIMAL</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+<span class="k">OUT</span> <span class="n">p3</span> <span class="n">DECIMAL</span> <span class="p">(</span><span class="mi">8</span><span class="p">.</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="k">BEGIN</span>
+<span class="k">SELECT</span> <span class="k">MIN</span><span class="p">(</span><span class="n">prod_price</span><span class="p">)</span> <span class="k">INTO</span> <span class="n">p1</span> <span class="k">FROM</span> <span class="n">products</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="k">MAX</span><span class="p">(</span><span class="n">prod_price</span><span class="p">)</span> <span class="k">INTO</span> <span class="n">p2</span> <span class="k">FROM</span> <span class="n">products</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="k">AVG</span><span class="p">(</span><span class="n">prod_price</span><span class="p">)</span> <span class="k">INTO</span> <span class="n">p3</span> <span class="k">FROM</span> <span class="n">products</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span> <span class="o">//</span>
+<span class="k">DELIMITER</span> <span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>All MySQL variable names must begin with <code class="highlighter-rouge">@</code>.</p>
+  </li>
+  <li>A <code class="highlighter-rouge">cursor</code> is a query stored on the MySQL server as the result set retrieved by a <code class="highlighter-rouge">SELECT</code> statement. Cursor is used to scroll or browse through the data as needed, something that can’t be achieved through single <code class="highlighter-rouge">SELECT</code> statement.</li>
+  <li>MySQL cursors may only be used within stored procedures(and functions).</li>
+  <li>Cursor needs to be opened after declaration and closed after done.</li>
+  <li>Local variables defined with <code class="highlighter-rouge">DECLARE</code> must be defined before any cursors or handlers are defined, and handlers must be defined after any cursors.</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">PROCEDURE</span> <span class="n">processorders</span><span class="p">()</span>
+<span class="k">BEGIN</span>
+
+	<span class="c1">-- Declare local variables</span>
+    <span class="k">DECLARE</span> <span class="n">done</span> <span class="n">BOOLEAN</span> <span class="k">DEFAULT</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">DECLARE</span> <span class="n">o</span> <span class="n">INT</span><span class="p">;</span>
+    <span class="k">DECLARE</span> <span class="n">t</span> <span class="n">DECIMAL</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+    
+    <span class="c1">-- Declare the cursor</span>
+    <span class="k">DECLARE</span> <span class="n">ordernumbers</span> <span class="k">CURSOR</span>
+    <span class="k">FOR</span>
+    <span class="k">SELECT</span> <span class="n">order_num</span> <span class="k">FROM</span> <span class="n">orders</span><span class="p">;</span>
+	
+    <span class="c1">-- Declare continue handler</span>
+    <span class="k">DECLARE</span> <span class="k">CONTINUE</span> <span class="k">HANDLER</span> <span class="k">FOR</span> <span class="k">SQLSTATE</span> <span class="s1">'02000'</span> <span class="k">SET</span> <span class="n">done</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    
+    <span class="c1">-- Create a table to store the results</span>
+    <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="n">ordertotals</span>
+		<span class="p">(</span><span class="n">order_num</span> <span class="n">INT</span><span class="p">,</span> <span class="n">total</span> <span class="n">DECIMAL</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
+        
+	<span class="c1">-- Open the cursor</span>
+    <span class="k">OPEN</span> <span class="n">ordernumbers</span><span class="p">;</span>
+    
+    <span class="c1">-- Loop through all rows</span>
+    <span class="n">REPEAT</span>
+		
+        <span class="c1">-- Get order number</span>
+        <span class="k">FETCH</span> <span class="n">ordernumbers</span> <span class="k">INTO</span> <span class="n">o</span><span class="p">;</span>
+        
+        <span class="c1">-- Get the total for this order</span>
+        <span class="k">CALL</span> <span class="n">ordertotal</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
+        
+        <span class="c1">-- Insert order and total into ordertotals</span>
+        <span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">ordertotals</span><span class="p">(</span><span class="n">order_num</span><span class="p">,</span> <span class="n">total</span><span class="p">)</span>
+        <span class="k">VALUES</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">t</span><span class="p">);</span>
+        
+	<span class="c1">-- End of loop</span>
+    <span class="k">UNTIL</span> <span class="n">done</span> <span class="k">END</span> <span class="n">REPEAT</span><span class="p">;</span>
+    
+    <span class="c1">-- Close the cursor</span>
+    <span class="k">CLOSE</span> <span class="n">ordernumbers</span><span class="p">;</span>
+    
+<span class="k">END</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>A <em>trigger</em> is a MySQL statement (or a group of statements enclosed within BEGIN and END statements) that are automatically executed by MySQL in response to <code class="highlighter-rouge">DELETE</code>, <code class="highlighter-rouge">INSERT</code> or <code class="highlighter-rouge">UPDATE</code>.</li>
+  <li>A virtual table named <code class="highlighter-rouge">NEW</code> is used to access the rows when using <code class="highlighter-rouge">INSERT</code> trigger, like:</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TRIGGER</span> <span class="n">neworder</span> <span class="k">AFTER</span> <span class="k">INSERT</span> <span class="k">ON</span> <span class="n">orders</span>
+<span class="k">FOR</span> <span class="k">EACH</span> <span class="k">ROW</span> <span class="k">SELECT</span> <span class="k">NEW</span><span class="p">.</span><span class="n">order_num</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>In MySQL, triger can not return a resultset, so the above will not work. Either use a procedure or use a <code class="highlighter-rouge">SET</code> in a triger could solve the problem.</strong></li>
+  <li>Use transactions for blocks that must be executed as a batch without failure.</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">START</span> <span class="n">TRANSACTION</span><span class="p">;</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">orderitems</span> <span class="k">WHERE</span> <span class="n">order_num</span> <span class="o">=</span> <span class="mi">20010</span><span class="p">;</span>
+<span class="n">SAVEPOINT</span> <span class="n">delete1</span><span class="p">;</span>
+<span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">orders</span> <span class="k">WHERE</span> <span class="n">order_num</span> <span class="o">=</span> <span class="mi">20010</span><span class="p">;</span>
+<span class="k">COMMIT</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Use <code class="highlighter-rouge">AUTOCOMMIT</code> to change the commit behavior of statement, which is defaulted as implicitly commit. The <code class="highlighter-rouge">AUTOCOMMIT</code> flag is per connection, not server-wide.</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SET</span> <span class="n">autocommit</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Use <code class="highlighter-rouge">IFNULL()</code> function to return a different value when retrieve <code class="highlighter-rouge">NULL</code> values from the table.</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SELECT</span>  
+<span class="n">IFNULL</span><span class="p">(</span><span class="n">CONCAT</span><span class="p">(</span><span class="n">cust_name</span><span class="p">,</span><span class="s1">' has email: '</span><span class="p">,</span> <span class="n">cust_email</span><span class="p">),</span> <span class="n">CONCAT</span><span class="p">(</span><span class="n">cust_name</span><span class="p">,</span><span class="s1">' has no email'</span><span class="p">))</span>
+<span class="k">AS</span> <span class="n">cust_info</span>  <span class="k">FROM</span> <span class="n">customers</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p><em>Working script</em></p>
+
+<noscript><pre>SELECT cust_name, cust_city, 
+(SELECT COUNT(*) FROM orders WHERE orders.cust_id=customers.cust_id) AS orders
+FROM customers
+ORDER BY orders;
+
+SELECT vend_name, prod_name, prod_price
+FROM vendors, products
+WHERE vendors.vend_id = products.vend_id
+ORDER BY vend_name, prod_name;
+
+SELECT vend_name, prod_name, prod_price, vendors.vend_id
+FROM vendors INNER JOIN products
+ON vendors.vend_id = products.vend_id;
+
+SELECT prod_name, vend_name, prod_price, quantity
+FROM orderitems, products, vendors
+WHERE products.vend_id = vendors.vend_id
+  AND orderitems.prod_id = products.prod_id
+  AND orderitems.order_num = 20005;
+  
+SELECT prod_name, vend_name, prod_price, quantity, order_num
+FROM orderitems JOIN products on orderitems.prod_id = products.prod_id
+JOIN vendors ON
+products.vend_id = vendors.vend_id 
+WHERE orderitems.order_num=20005;
+
+#join multiple tables
+SELECT cust_name, cust_contact
+FROM customers JOIN orders on customers.cust_id = orders.cust_id JOIN orderitems
+ON orderitems.order_num = orders.order_num WHERE orderitems.prod_id=&#39;TNT2&#39;;
+
+SELECT cust_name, cust_contact
+FROM customers AS c JOIN orders AS o on c.cust_id = o.cust_id
+JOIN orderitems AS oi ON oi.order_num = o.order_num
+WHERE oi.prod_id=&#39;TNT2&#39;;
+
+SELECT p1.prod_id, p1.prod_name
+FROM products AS p1 JOIN products p2
+ON p1.vend_id = p2.vend_id
+AND p2.prod_id = &#39;DTNTR&#39;;
+
+SELECT customers.cust_id, orders.order_num
+FROM customers INNER JOIN orders
+ ON customers.cust_id = orders.cust_id;
+ 
+#outer join
+SELECT customers.cust_id, orders.order_num
+FROM customers LEFT OUTER JOIN orders
+ON customers.cust_id = orders.cust_id;
+
+SELECT c.cust_name, c.cust_id, COUNT(o.order_num) AS num_order
+FROM customers AS c LEFT OUTER JOIN orders AS o
+ON c.cust_id = o.cust_id
+GROUP BY c.cust_id
+ORDER BY num_order DESC;
+
+#full-text search
+SELECT * FROM productnotes WHERE note_text REGEXP &#39;rabbit&#39;;
+SELECT note_text FROM productnotes WHERE MATCH(note_text) AGAINST(&#39;rabbit&#39;);
+SELECT note_text, MATCH(note_text) AGAINST(&#39;rabbit&#39;) AS RANK FROM productnotes;
+SELECT note_text FROm productnotes 
+WHERE MATCH(note_text) AGAINST(&#39;anvils&#39; WITH QUERY EXPANSION);
+
+SELECT note_text, MATCH(note_text) AGAINST(&#39;heavy ~rope*&#39; IN BOOLEAN MODE) AS RANK
+FROM productnotes;
+
+CREATE TABLE custnew
+(
+	cust_id			int			NOT NULL		AUTO_INCREMENT,
+    cust_name		char(50)	NOT NULL	,
+    cust_address	char(50)	NOT NULL	,
+    cust_city		char(50)	NOT NULL	,
+    PRIMARY KEY (cust_id)
+) ENGINE=InnoDB;
+DROP TABLE custnew;
+
+INSERT INTO customers(cust_name, cust_address)
+SELECT cust_name, cust_address FROM custnew;
+
+UPDATE customers
+SET cust_email = &#39;elmer@fudd.com&#39;
+WHERE cust_id = 10005;
+
+CREATE VIEW productcustomers AS
+SELECT cust_name, cust_contact, prod_id 
+FROM customers AS c JOIN orders AS o
+ON c.cust_id = o.cust_id
+JOIN orderitems AS oi ON o.order_num = oi.order_num;
+
+SELECT cust_name, cust_contact
+FROM productcustomers
+WHERE prod_id = &#39;TNT2&#39;;
+
+DELIMITER //
+CREATE PROCEDURE productpricing(
+OUT p1 DECIMAL (8,2),
+OUT p2 DECIMAL (8,2),
+OUT p3 DECIMAL (8.2)
+)
+BEGIN
+SELECT MIN(prod_price) INTO p1 FROM products;
+SELECT MAX(prod_price) INTO p2 FROM products;
+SELECT AVG(prod_price) INTO p3 FROM products;
+END//
+DELIMITER ;
+
+DELIMITER //
+CREATE PROCEDURE ordertotal(
+IN onumber INT,
+OUT ototal DECIMAL(8,2)
+)
+BEGIN
+SELECT SUM(item_price*quantity)
+FROM orderitems
+WHERE order_num = onumber
+INTO ototal;
+END//
+DELIMITER ;
+
+CALL ordertotal(20009, @total);
+SELECT @total;
+
+DELIMITER //
+-- Name: ordertotal
+-- Parameters:	onumber = order number
+-- 				taxable = 0 if not taxable, 1 if taxable
+-- 				ototal = order total variable
+DROP PROCEDURE ordertotal IF EXISTS;
+CREATE PROCEDURE ordertotal(
+IN onumber INT,
+IN taxable BOOLEAN,
+OUT ototal DECIMAL (8,2)
+) COMMENT &#39;Obtain order total, optionally adding tax&#39;
+BEGIN
+	-- Declare variable for total
+	DECLARE total DECIMAL (8,2);
+    -- Declare tax percentage
+    DECLARE taxrate INT DEFAULT 6;
+    
+    -- Get the order total
+    SELECT SUM(item_price * quantity)
+    FROM orderitems
+    WHERE order_num = onumber
+    INTO total;
+    
+    -- Is this taxable?
+    IF taxable THEN
+		-- Yes, so add taxrate to the total
+        SELECT total + (total / 100 * taxrate) INTO total;
+	END IF;
+    
+    -- And finally, save to out variable
+    SELECT total INTO ototal;
+END;
+DELIMITER ;
+
+CALL ordertotal(20005, 1, @total);
+SELECT @total AS total_cost_of_order_20005;
+SHOW CREATE PROCEDURE ordertotal;
+
+DELIMITER //
+CREATE PROCEDURE processorders()
+BEGIN
+
+	-- Declare local variables
+    DECLARE done BOOLEAN DEFAULT 0;
+    DECLARE o INT;
+    DECLARE t DECIMAL (8,2);
+    
+    -- Declare the cursor
+    DECLARE ordernumbers CURSOR
+    FOR
+    SELECT order_num FROM orders;
+	
+    -- Declare continue handler
+    DECLARE CONTINUE HANDLER FOR SQLSTATE &#39;02000&#39; SET done = 1;
+    
+    -- Create a table to store the results
+    CREATE TABLE IF NOT EXISTS ordertotals
+		(order_num INT, total DECIMAL (8,2));
+        
+	-- Open the cursor
+    OPEN ordernumbers;
+    
+    -- Loop through all rows
+    REPEAT
+		
+        -- Get order number
+        FETCH ordernumbers INTO o;
+        
+        -- Get the total for this order
+        CALL ordertotal(o, 1, t);
+        
+        -- Insert order and total into ordertotals
+        INSERT INTO ordertotals(order_num, total)
+        VALUES(o, t);
+        
+	-- End of loop
+    UNTIL done END REPEAT;
+    
+    -- Close the cursor
+    CLOSE ordernumbers;
+    
+END//
+DELIMITER ;
+
+CALL processorders;
+SELECT * FROM ordertotals;
+
+CREATE TRIGGER neworder AFTER INSERT ON orders
+FOR EACH ROW SELECT NEW.order_num;
+
+DELIMITER //
+CREATE TRIGGER deleteorder BEFORE DELETE ON orders
+FOR EACH ROW
+BEGIN
+	INSERT INTO archive_orders(order_num, order_date, cust_id)
+    VALUES(OLD.order_num, OLD-order_date, OLD.cust_id);
+END; //
+DELIMITER ;
+
+SHOW CHARACTER SET;
+SHOW VARIABLES LIKE &#39;character%&#39;;
+SHOW VARIABLES LIKE &#39;collation%&#39;;</pre></noscript>
+<script src="https://gist.github.com/geeknerd/dade57c153f138bc840f.js"> </script>
+
+
+  </article>
+
+</div>
+
+<div class="share-icons">
+  <h6>SHARE ON</h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/2016/01/31/mysql-notes.html" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2016/01/31/mysql-notes.html" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/2016/01/31/mysql-notes.html" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/2016/01/31/mysql-notes.html" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'geeknerd';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+<div class="related-articles">
+<h4>You might also enjoy</h4>
+  <ul>
+  
+    <li><a href="http://localhost:4000/2017/08/24/mac-terminal-color.html" title="Customize Terminal Colors in Mac OS X">Customize Terminal Colors in Mac OS X</a></li>
+  
+    <li><a href="http://localhost:4000/2015/09/22/setup-git-on-mac.html" title="Set Up Git on Mac OS X">Set Up Git on Mac OS X</a></li>
+  
+    <li><a href="http://localhost:4000/2015/09/21/remarks-on-ubuntu.html" title="Some Remarks on Ubuntu 14.04.03">Some Remarks on Ubuntu 14.04.03</a></li>
+  
+  </ul>
+</div><!-- /.related-articles -->
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67656024-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+        <footer>
+  &copy; 2017 Yi Xia. Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+</footer>
+
+      </div>
+    </div>
+
+  </body>
+
+  <script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script src="http://localhost:4000/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67656024-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</html>

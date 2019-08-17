@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Install NVIDIA Driver on Ubuntu 17.04 for GTX1050Ti Graphic Card</title>
+  <meta name="description" content="Basically a way to install the latest NVIDIA driver for GTX1050Ti card on a laptop in Ubuntu.">
+
+  <link rel="stylesheet" href="http://localhost:4000/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+  <link rel="shortcut icon" type="image/x-icon" href="http://localhost:4000/favicon.ico?">
+  <link rel="canonical" href="http://localhost:4000/2017/10/16/ubuntu-nvidia-driver.html">
+  <link rel="alternate" type="application/rss+xml" title="Yi Xia" href="http://localhost:4000/feed.xml">
+  
+</head>
+
+
+  <body>
+
+    <div class="container-fluid" id="main-layout">
+      <div class="sidebar col-sm-12 col-md-3">
+        
+
+<div class="header">
+
+  
+  <div class="row visible-md-block visible-lg-block">
+    <img class="author-avatar" src="http://localhost:4000/img/avatar.jpg" alt="yi xia">
+  </div>
+  
+  <div class="row">
+    <a href="http://localhost:4000/" class="brand-title">Yi Xia</a>
+    <span class="brand-tagline">Small blog for something big.</span>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+        </li>
+        
+        <!-- test different order -->
+        <li class="nav-item">
+          <a href="http://localhost:4000/resume">Resume</a>
+          <span>/</span>
+        </li>
+        <li class="nav-item">
+          <a href="http://localhost:4000/archive">Archive</a>
+          <span>/</span>
+        </li>
+        <li class="nav-item">
+          <a href="http://localhost:4000/updates">Updates</a>
+          <span>/</span>
+        </li>
+        <li class="nav-item">
+          <a href="http://localhost:4000/tags">Categories</a>
+        </li>
+
+        <!--
+         
+        <li class="nav-item">
+          <a href="http://localhost:4000/archive/">Archive</a> <span>/</span>
+        </li>
+                
+        <li class="nav-item">
+          <a href="http://localhost:4000/resume/">Resume</a> <span>/</span>
+        </li>
+          
+        <li class="nav-item">
+          <a href="http://localhost:4000/tags/">Tags</a> <span>/</span>
+        </li>
+          
+        <li class="nav-item">
+          <a href="http://localhost:4000/updates/">Updates</a> <span>/</span>
+        </li>
+           
+        -->
+        
+      </ul>
+    </nav>
+    <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('yxia921@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    
+    <li><a href="http://facebook.com/bao571" class="social-link-item" target="_blank"><i class="fa fa-fw fa-facebook"></i></a></li>
+    <li><a href="http://plus.google.com/+YiXia571" class="social-link-item" target="_blank"><i class="fa fa-fw fa-google-plus"></i></a></li>
+    <li><a href="http://linkedin.com/in/hiyixia" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    <li><a href="http://github.com/geeknerd" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    <li><a href="http://www.weibo.com/geeknerdlab" class="social-link-item" target="_blank"><i class="fa fa-fw fa-weibo"></i></a></li>
+    
+    
+  </ul>
+</div>
+
+  </div>
+
+</div>
+
+      </div>
+      <div class="content col-sm-12 col-md-9">
+        <!--add a go-back button-->
+<a class="btn" href="javascript:history.back()">
+  Back
+</a>
+
+<!--show post image if exists-->
+
+<div class="post-image-feature">
+  <img class="feature-image" src="http://localhost:4000/img/ubuntu.jpg" alt="Install NVIDIA Driver on Ubuntu 17.04 for GTX1050Ti Graphic Card feature image">
+
+  
+</div>
+<!-- /.image-wrap -->
+
+
+<div class="post">
+  <header class="post-header">
+    <h2>Install NVIDIA Driver on Ubuntu 17.04 for GTX1050Ti Graphic Card</h2>
+    <p class="post-meta">Oct 16, 2017</p>
+  </header>
+
+  <article class="post-content">
+    <p>Although Ubuntu has integrated drivers for most devices, some of the new graphic cards still need specific driver from their providers to work normally on Ubuntu system. My GTX1050Ti is one of those cards and here is a solution to make Linux on my Windows machine posible. Honestly, this is a combination of several solutions to make things happen.</p>
+
+<!--more-->
+
+<h2 id="hardware-configuration">Hardware configuration:</h2>
+<p>HP Omen 15 Laptop<br>
+CPU: Core i5-7730HQ<br>
+Graphics: NVIDIA GTX1050Ti</p>
+
+<h2 id="issue-encountered">Issue encountered:</h2>
+<p>Windows 10 is good, with the new Ubuntu bash integration, it’s almost packed for developers and should satify most people. Yet, working in a Linux environment is more doable for back-end developers and no gaming is what I really seek (Battlegrounds is killing me really). Anyway, I tried to install Ubuntu 17.04 to the SSD that I have on Omen but no matter what option I choose or how I partition the driver, it just didn’t work out. Sometimes it freezes after installation complete on restart page, sometimes it freezes after restart on login page, sometimes it finally gets into the desktop and freezes after I click on the settings button. <img class="emoji" title=":smirk:" alt=":smirk:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60f.png" height="20" width="20"></p>
+
+<p>At first I thought it could be issues with the ISO I used for Ubuntu or the USB drive I used to install, so I tried different ones and no results. After endless searching online I realized the problem could be due to my graphic card driver. (Well I actually thought it’s fine when I see the correct resolution during installation). Solutions follow.</p>
+
+<h2 id="solutions">Solutions:</h2>
+<h3 id="disable-nouveau-driver">Disable <em>nouveau</em> driver</h3>
+<p>Ubuntu uses nouveau as its graphic card driver, which we need to disable from the kernel in order to install NVIDIA official driver. Adding nouveau to blacklist.conf file will preventing linux from loading nouveau on startup.<br>
+Due to the nouveau driver, Ubuntu can’t log into desktop, thus no terminal to use. Therefore, at the login page, enter TTY mode by pressing <code class="highlighter-rouge">Ctrl+Alt+F1</code>.</p>
+
+<p>Remember to change permission for blacklist.conf first then revert it back.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ll /etc/modprobe.d/blacklist.conf
+</code></pre></div></div>
+
+<p>Set permission</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>chmod 666 /etc/modprobe.d/blacklist.conf
+</code></pre></div></div>
+
+<p>Edit it with your favorite editor:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>vi /etc/modprobe.d/blacklist.conf
+</code></pre></div></div>
+
+<p>Append these to the end of the file</p>
+
+<p class="notice">blacklist vga16fb<br>
+blacklist nouveau<br>
+blacklist rivafb<br>
+blacklist rivatv<br>
+blacklist nvidiafb</p>
+
+<p>Revert back the permission for safety.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>chmod 644 /etc/modprobe.d/blacklist.conf
+</code></pre></div></div>
+
+<p>Remember to update the kernel before use.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>update-initramfs <span class="nt">-u</span>
+</code></pre></div></div>
+
+<p><strong>Remember to reboot at this point.</strong></p>
+
+<p>Make sure nouveau is blacklisted.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lsmod | <span class="nb">grep </span>nouveau
+</code></pre></div></div>
+
+<h3 id="install-nvidia-driver">Install NVIDIA driver</h3>
+<p>Unless the hardware doesn’t come with a integrated graphic card, at this point, it should be possible to enter Ubuntu desktop environment. (Mixed resolution might apply but don’t panic… yet). Now we add official driver through Terminal.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>add-apt-repository ppa:graphics-drivers/ppa
+<span class="nb">sudo </span>apt-get update
+</code></pre></div></div>
+<p>Remember to search for your suitable (recommended) driver version.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu-drivers devices
+</code></pre></div></div>
+<p class="center"><img src="http://localhost:4000/img/device.png" alt=""></p>
+<p><em>If the recommended version doesn’t work, try different ones.</em></p>
+
+<p>At this point, remember the version name, <code class="highlighter-rouge">nvidia-387</code> in this case.<br>
+Enter TTY mode by <code class="highlighter-rouge">Ctrl+Alt+F1</code> to close display manager LightDM</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>service lightdm stop
+</code></pre></div></div>
+
+<p><strong>Ubuntu 17.10 uses GDM in place of LightDM for diaplay manager, therefore the command needs to stop GDM service instead.</strong></p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>service gdm stop
+</code></pre></div></div>
+
+<p>Now, install the NVIDIA driver and reboot.<br>
+Might take a while depending on the network speed.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get install nvidia-387
+<span class="nb">sudo </span>reboot
+</code></pre></div></div>
+<p>Hopefully, everything works out and login works fine.<br>
+Check if driver installed correctly and settings could be used.</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>nvidia-smi
+<span class="nb">sudo </span>nvidia-settings
+</code></pre></div></div>
+<p><em>Pictures see the top.</em></p>
+
+<h3 id="bios-setting">BIOS Setting</h3>
+<p>Remember to set Secure Boot to Disabled in BIOS settings when installing NVIDIA driver. Otherwise errors might occur.</p>
+
+<p>Everything should be good to go.</p>
+
+  </article>
+
+</div>
+
+<div class="share-icons">
+  <h6>SHARE ON</h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/2017/10/16/ubuntu-nvidia-driver.html" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2017/10/16/ubuntu-nvidia-driver.html" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/2017/10/16/ubuntu-nvidia-driver.html" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/2017/10/16/ubuntu-nvidia-driver.html" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'geeknerd';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+
+
+
+
+
+<div class="related-articles">
+<h4>You might also enjoy</h4>
+  <ul>
+  
+    <li><a href="http://localhost:4000/2017/08/24/mac-terminal-color.html" title="Customize Terminal Colors in Mac OS X">Customize Terminal Colors in Mac OS X</a></li>
+  
+    <li><a href="http://localhost:4000/2016/01/31/mysql-notes.html" title="MySQL Syntax Notes">MySQL Syntax Notes</a></li>
+  
+    <li><a href="http://localhost:4000/2015/09/22/setup-git-on-mac.html" title="Set Up Git on Mac OS X">Set Up Git on Mac OS X</a></li>
+  
+  </ul>
+</div>
+<!-- /.related-articles -->
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67656024-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+        <footer>
+  © 2017 Yi Xia. Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+</footer>
+
+      </div>
+    </div>
+
+  </body>
+
+<script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script src="http://localhost:4000/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67656024-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Install NVIDIA Driver on Ubuntu 17.04 for GTX1050Ti Graphic Card | Yi Xia</title>
+<meta property="og:title" content="Install NVIDIA Driver on Ubuntu 17.04 for GTX1050Ti Graphic Card">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Basically a way to install the latest NVIDIA driver for GTX1050Ti card on a laptop in Ubuntu.">
+<meta property="og:description" content="Basically a way to install the latest NVIDIA driver for GTX1050Ti card on a laptop in Ubuntu.">
+<link rel="canonical" href="http://localhost:4000/2017/10/16/ubuntu-nvidia-driver.html">
+<meta property="og:url" content="http://localhost:4000/2017/10/16/ubuntu-nvidia-driver.html">
+<meta property="og:site_name" content="Yi Xia">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-10-16T00:00:00+08:00">
+<script type="application/ld+json">
+{"name":null,"description":"Basically a way to install the latest NVIDIA driver for GTX1050Ti card on a laptop in Ubuntu.","author":null,"@type":"BlogPosting","url":"http://localhost:4000/2017/10/16/ubuntu-nvidia-driver.html","publisher":null,"image":null,"headline":"Install NVIDIA Driver on Ubuntu 17.04 for GTX1050Ti Graphic Card","dateModified":"2017-10-16T00:00:00+08:00","datePublished":"2017-10-16T00:00:00+08:00","sameAs":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/10/16/ubuntu-nvidia-driver.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</html>

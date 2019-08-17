@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Simple Memory Address to Decimal C++</title>
+  <meta name="description" content="This program compares the memory addresses of two different variables on the stack and prints out the order of their addresses in decimal.1234567891011121314...">
+
+  <link rel="stylesheet" href="http://localhost:4000/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/font-awesome.min.css">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+  <link rel="shortcut icon" type="image/x-icon" href="http://localhost:4000/favicon.ico?">
+  <link rel="canonical" href="http://localhost:4000/2015/05/25/simple-memory-address-to-decimal-cpp.html">
+  <link rel="alternate" type="application/rss+xml" title="Yi Xia" href="http://localhost:4000/feed.xml" />
+  
+</head>
+
+
+  <body>
+
+    <div class="container-fluid" id="main-layout">
+      <div class="sidebar col-sm-12 col-md-3">
+        
+
+<div class="header">
+
+  
+  <div class="row visible-md-block visible-lg-block">
+    <img class="author-avatar" src="http://localhost:4000/img/avatar.jpg" alt="yi xia">
+  </div>
+  
+  <div class="row">
+    <a href="http://localhost:4000/" class="brand-title">Yi Xia</a>
+    <span class="brand-tagline">Small blog for something big.</span>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+        <a href="http://localhost:4000/">home</a>
+        <span>/</span>
+        </li>
+        
+        <!-- test different order -->
+        <li class="nav-item">
+          <a href="http://localhost:4000/resume">Resume</a>
+          <span>/</span>
+        </li>
+        <li class="nav-item">
+          <a href="http://localhost:4000/archive">Archive</a>
+          <span>/</span>
+        </li>
+        <li class="nav-item">
+          <a href="http://localhost:4000/updates">Updates</a>
+          <span>/</span>
+        </li>
+        <li class="nav-item">
+          <a href="http://localhost:4000/tags">Categories</a>
+        </li>
+
+        <!--
+         
+        <li class="nav-item">
+          <a href="http://localhost:4000/archive/">Archive</a> <span>/</span>
+        </li>
+                
+        <li class="nav-item">
+          <a href="http://localhost:4000/resume/">Resume</a> <span>/</span>
+        </li>
+          
+        <li class="nav-item">
+          <a href="http://localhost:4000/tags/">Tags</a> <span>/</span>
+        </li>
+          
+        <li class="nav-item">
+          <a href="http://localhost:4000/updates/">Updates</a> <span>/</span>
+        </li>
+           
+        -->
+        
+      </ul>
+    </nav>
+    <script type="text/javascript">
+  // based on http://stackoverflow.com/a/10300743/280842
+  function gen_mail_to_link(hs, subject) {
+    var lhs,rhs;
+    var p = hs.split('@');
+    lhs = p[0];
+    rhs = p[1];
+    document.write("<a class=\"social-link-item\" target=\"_blank\" href=\"mailto");
+    document.write(":" + lhs + "@");
+    document.write(rhs + "?subject=" + subject + "\"><i class=\"fa fa-fw fa-envelope\"></i><\/a>");
+  }
+</script>
+<div class="social-links">
+  <ul>
+    
+      <li>
+      <script>gen_mail_to_link('yxia921@gmail.com', 'Hello from website');</script>
+      </li>
+    
+    
+    <li><a href="http://facebook.com/bao571" class="social-link-item" target="_blank"><i class="fa fa-fw fa-facebook"></i></a></li>
+    <li><a href="http://plus.google.com/+YiXia571" class="social-link-item" target="_blank"><i class="fa fa-fw fa-google-plus"></i></a></li>
+    <li><a href="http://linkedin.com/in/hiyixia" class="social-link-item" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a></li>
+    
+    
+    
+    <li><a href="http://github.com/geeknerd" class="social-link-item" target="_blank"><i class="fa fa-fw fa-github"></i></a></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    <li><a href="http://www.weibo.com/geeknerdlab" class="social-link-item" target="_blank"><i class="fa fa-fw fa-weibo"></i></a></li>
+    
+    
+  </ul>
+</div>
+
+  </div>
+
+</div>
+
+      </div>
+      <div class="content col-sm-12 col-md-9">
+        <!--add a go-back button-->
+<a class="btn" href= "javascript:history.back()" >
+  Back
+</a>
+
+<!--show post image if exists-->
+
+
+<div class="post">
+  <header class="post-header">
+    <h2>Simple Memory Address to Decimal C++</h2>
+    <p class="post-meta">May 25, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <p>This program compares the memory addresses of two different variables on the stack and prints out the order of their addresses in decimal.</p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+</pre></td><td class="code"><pre><span class="c1">// Comment
+// EXPECTING CHANGES
+//
+//  pointer_practice.cpp
+//  Hello Pointer
+//
+//  Created by Yi Xia on 5/23/15.
+//  Copyright (c) 2015 Yi Xia. All rights reserved.
+//
+</span><span class="err"> </span>
+<span class="cp">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+#include &lt;sstream&gt;
+#include &lt;cstdlib&gt;
+</span><span class="err"> </span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="err"> </span>
+<span class="kt">long</span> <span class="n">hex_to_decimal</span><span class="p">(</span><span class="n">string</span> <span class="n">s_num</span><span class="p">);</span>
+<span class="err"> </span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+<span class="err">    </span><span class="kt">int</span> <span class="n">val_1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="err">    </span><span class="kt">int</span> <span class="n">val_2</span> <span class="o">=</span> <span class="mi">15</span><span class="p">;</span>
+<span class="err">    </span><span class="kt">int</span> <span class="o">*</span><span class="n">p_val_1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">val_1</span><span class="p">;</span>
+<span class="err">    </span><span class="kt">int</span> <span class="o">*</span><span class="n">p_val_2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">val_2</span><span class="p">;</span>
+<span class="err">    </span><span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
+<span class="err">    </span><span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">p_val_1</span><span class="p">;</span>
+<span class="err">    </span><span class="n">string</span> <span class="n">s_1</span><span class="p">;</span>
+<span class="err">    </span><span class="n">ss</span> <span class="o">&gt;&gt;</span> <span class="n">s_1</span><span class="p">;</span>
+<span class="err">    </span><span class="n">ss</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+<span class="err">    </span><span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">p_val_2</span><span class="p">;</span>
+<span class="err">    </span><span class="n">string</span> <span class="n">s_2</span><span class="p">;</span>
+<span class="err">    </span><span class="n">ss</span> <span class="o">&gt;&gt;</span> <span class="n">s_2</span><span class="p">;</span>
+<span class="err">    </span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"val 1 address: "</span> <span class="o">&lt;&lt;</span> <span class="n">s_1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="err">    </span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"val 2 address: "</span> <span class="o">&lt;&lt;</span> <span class="n">s_2</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="err">    </span><span class="kt">long</span> <span class="n">d_val_1</span> <span class="o">=</span> <span class="n">hex_to_decimal</span><span class="p">(</span><span class="n">s_1</span><span class="p">);</span>
+<span class="err">    </span><span class="kt">long</span> <span class="n">d_val_2</span> <span class="o">=</span> <span class="n">hex_to_decimal</span><span class="p">(</span><span class="n">s_2</span><span class="p">);</span>
+<span class="err">    </span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"val 1 address: "</span> <span class="o">&lt;&lt;</span> <span class="n">d_val_1</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="err">    </span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"val 2 address: "</span> <span class="o">&lt;&lt;</span> <span class="n">d_val_2</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="err">    </span><span class="k">if</span><span class="p">(</span><span class="n">d_val_1</span> <span class="o">&gt;</span> <span class="n">d_val_2</span><span class="p">){</span>
+<span class="err">        </span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"val 1 address is greater than val 2"</span><span class="p">;</span>
+<span class="err">    </span><span class="p">}</span>
+<span class="err">    </span><span class="k">else</span><span class="p">{</span>
+<span class="err">        </span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"val 2 address is greater than val 1"</span><span class="p">;</span>
+<span class="err">    </span><span class="p">}</span>
+<span class="err">    </span><span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="err"> </span>
+<span class="kt">long</span> <span class="n">hex_to_decimal</span> <span class="p">(</span><span class="n">string</span> <span class="n">s_num</span><span class="p">){</span>
+<span class="c1">//string s_num = to_string(num);
+</span><span class="err">    </span><span class="kt">long</span> <span class="n">d_num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="err">    </span><span class="kt">char</span> <span class="n">current</span><span class="p">;</span>
+<span class="err">    </span><span class="kt">long</span> <span class="n">base</span><span class="p">;</span>
+<span class="err">    </span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s_num</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">        </span><span class="n">current</span> <span class="o">=</span> <span class="n">s_num</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+<span class="err">        </span><span class="n">base</span> <span class="o">=</span> <span class="p">(</span><span class="kt">long</span><span class="p">)</span> <span class="n">pow</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">s_num</span><span class="p">.</span><span class="n">length</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">);</span>
+<span class="err">        </span><span class="k">switch</span> <span class="p">(</span><span class="n">current</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">            </span><span class="k">case</span> <span class="sc">'a'</span><span class="p">:</span>
+<span class="err">                </span><span class="n">d_num</span> <span class="o">+=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">base</span><span class="p">;</span>
+<span class="err">                </span><span class="k">break</span><span class="p">;</span>
+<span class="err">            </span><span class="k">case</span> <span class="sc">'b'</span><span class="p">:</span>
+<span class="err">                </span><span class="n">d_num</span> <span class="o">+=</span> <span class="mi">11</span> <span class="o">*</span> <span class="n">base</span><span class="p">;</span>
+<span class="err">                </span><span class="k">break</span><span class="p">;</span>
+<span class="err">            </span><span class="k">case</span> <span class="sc">'c'</span><span class="p">:</span>
+<span class="err">                </span><span class="n">d_num</span> <span class="o">+=</span> <span class="mi">12</span> <span class="o">*</span> <span class="n">base</span><span class="p">;</span>
+<span class="err">                </span><span class="k">break</span><span class="p">;</span>
+<span class="err">            </span><span class="k">case</span> <span class="sc">'d'</span><span class="p">:</span>
+<span class="err">                </span><span class="n">d_num</span> <span class="o">+=</span> <span class="mi">13</span> <span class="o">*</span> <span class="n">base</span><span class="p">;</span>
+<span class="err">                </span><span class="k">break</span><span class="p">;</span>
+<span class="err">            </span><span class="k">case</span> <span class="sc">'e'</span><span class="p">:</span>
+<span class="err">                </span><span class="n">d_num</span> <span class="o">+=</span> <span class="mi">14</span> <span class="o">*</span> <span class="n">base</span><span class="p">;</span>
+<span class="err">                </span><span class="k">break</span><span class="p">;</span>
+<span class="err">            </span><span class="k">case</span> <span class="sc">'f'</span><span class="p">:</span>
+<span class="err">                </span><span class="n">d_num</span> <span class="o">+=</span> <span class="mi">15</span> <span class="o">*</span> <span class="n">base</span><span class="p">;</span>
+<span class="err">                </span><span class="k">break</span><span class="p">;</span>
+<span class="err">            </span><span class="k">default</span><span class="o">:</span>
+<span class="err">                </span><span class="n">d_num</span> <span class="o">+=</span> <span class="p">(</span><span class="n">stoi</span><span class="p">(</span><span class="o">&amp;</span><span class="n">current</span><span class="p">))</span> <span class="o">*</span> <span class="n">base</span><span class="p">;</span>
+<span class="err">                </span><span class="k">break</span><span class="p">;</span>
+<span class="err">        </span><span class="p">}</span>
+<span class="err">    </span><span class="p">}</span>
+<span class="err">    </span><span class="k">return</span> <span class="n">d_num</span><span class="p">;</span>
+<span class="p">}</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Easier way for hex to decimal:</p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
+<span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">p_val_1</span><span class="p">;</span>
+<span class="kt">long</span> <span class="n">add_1</span><span class="p">;</span>
+<span class="n">ss</span> <span class="o">&gt;&gt;</span> <span class="n">hex</span> <span class="o">&gt;&gt;</span> <span class="n">add_1</span><span class="p">;</span></pre></td></tr></tbody></table></code></pre></figure>
+
+
+  </article>
+
+</div>
+
+<div class="share-icons">
+  <h6>SHARE ON</h6>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://localhost:4000/2015/05/25/simple-memory-address-to-decimal-cpp.html" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2015/05/25/simple-memory-address-to-decimal-cpp.html" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://localhost:4000/2015/05/25/simple-memory-address-to-decimal-cpp.html" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+    <li>
+      <a href="https://www.reddit.com/submit?url=http://localhost:4000/2015/05/25/simple-memory-address-to-decimal-cpp.html" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+    </li>
+  </ul>
+</div>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'geeknerd';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+<div class="related-articles">
+<h4>You might also enjoy</h4>
+  <ul>
+  
+    <li><a href="http://localhost:4000/2017/10/16/ubuntu-nvidia-driver.html" title="Install NVIDIA Driver on Ubuntu 17.04 for GTX1050Ti Graphic Card">Install NVIDIA Driver on Ubuntu 17.04 for GTX1050Ti Graphic Card</a></li>
+  
+    <li><a href="http://localhost:4000/2017/08/24/mac-terminal-color.html" title="Customize Terminal Colors in Mac OS X">Customize Terminal Colors in Mac OS X</a></li>
+  
+    <li><a href="http://localhost:4000/2016/01/31/mysql-notes.html" title="MySQL Syntax Notes">MySQL Syntax Notes</a></li>
+  
+  </ul>
+</div><!-- /.related-articles -->
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67656024-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+        <footer>
+  &copy; 2017 Yi Xia. Powered by <a href="http://jekyllrb.com/">Jekyll</a>
+</footer>
+
+      </div>
+    </div>
+
+  </body>
+
+<script type="text/javascript" src="http://localhost:4000/js/jquery-2.1.4.min.js"></script>
+<script src="http://localhost:4000/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://localhost:4000/js/main.js"></script>
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67656024-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- Begin Jekyll SEO tag v2.3.0 -->
+<title>Simple Memory Address to Decimal C++ | Yi Xia</title>
+<meta property="og:title" content="Simple Memory Address to Decimal C++" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This program compares the memory addresses of two different variables on the stack and prints out the order of their addresses in decimal. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 // Comment // EXPECTING CHANGES // //  pointer_practice.cpp //  Hello Pointer // //  Created by Yi Xia on 5/23/15. //  Copyright (c) 2015 Yi Xia. All rights reserved. //   #include &lt;iostream&gt; #include &lt;cmath&gt; #include &lt;sstream&gt; #include &lt;cstdlib&gt;   using namespace std;   long hex_to_decimal(string s_num);   int main(int argc, const char * argv[]) {     int val_1 = 10;     int val_2 = 15;     int *p_val_1 = &amp;val_1;     int *p_val_2 = &amp;val_2;     stringstream ss;     ss &lt;&lt; p_val_1;     string s_1;     ss &gt;&gt; s_1;     ss.clear();     ss &lt;&lt; p_val_2;     string s_2;     ss &gt;&gt; s_2;     cout &lt;&lt; &quot;val 1 address: &quot; &lt;&lt; s_1 &lt;&lt; endl;     cout &lt;&lt; &quot;val 2 address: &quot; &lt;&lt; s_2 &lt;&lt; endl;     long d_val_1 = hex_to_decimal(s_1);     long d_val_2 = hex_to_decimal(s_2);     cout &lt;&lt; &quot;val 1 address: &quot; &lt;&lt; d_val_1 &lt;&lt; endl;     cout &lt;&lt; &quot;val 2 address: &quot; &lt;&lt; d_val_2 &lt;&lt; endl;     if(d_val_1 &gt; d_val_2){         cout &lt;&lt; &quot;val 1 address is greater than val 2&quot;;     }     else{         cout &lt;&lt; &quot;val 2 address is greater than val 1&quot;;     }     return 0; }   long hex_to_decimal (string s_num){ //string s_num = to_string(num);     long d_num = 0;     char current;     long base;     for (int i = 2; i &lt; s_num.length(); i++) {         current = s_num.at(i);         base = (long) pow(16, s_num.length()-1-i);         switch (current) {             case &#39;a&#39;:                 d_num += 10 * base;                 break;             case &#39;b&#39;:                 d_num += 11 * base;                 break;             case &#39;c&#39;:                 d_num += 12 * base;                 break;             case &#39;d&#39;:                 d_num += 13 * base;                 break;             case &#39;e&#39;:                 d_num += 14 * base;                 break;             case &#39;f&#39;:                 d_num += 15 * base;                 break;             default:                 d_num += (stoi(&amp;current)) * base;                 break;         }     }     return d_num; } Easier way for hex to decimal: 1 2 3 4 stringstream ss; ss &lt;&lt; p_val_1; long add_1; ss &gt;&gt; hex &gt;&gt; add_1;" />
+<meta property="og:description" content="This program compares the memory addresses of two different variables on the stack and prints out the order of their addresses in decimal. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 // Comment // EXPECTING CHANGES // //  pointer_practice.cpp //  Hello Pointer // //  Created by Yi Xia on 5/23/15. //  Copyright (c) 2015 Yi Xia. All rights reserved. //   #include &lt;iostream&gt; #include &lt;cmath&gt; #include &lt;sstream&gt; #include &lt;cstdlib&gt;   using namespace std;   long hex_to_decimal(string s_num);   int main(int argc, const char * argv[]) {     int val_1 = 10;     int val_2 = 15;     int *p_val_1 = &amp;val_1;     int *p_val_2 = &amp;val_2;     stringstream ss;     ss &lt;&lt; p_val_1;     string s_1;     ss &gt;&gt; s_1;     ss.clear();     ss &lt;&lt; p_val_2;     string s_2;     ss &gt;&gt; s_2;     cout &lt;&lt; &quot;val 1 address: &quot; &lt;&lt; s_1 &lt;&lt; endl;     cout &lt;&lt; &quot;val 2 address: &quot; &lt;&lt; s_2 &lt;&lt; endl;     long d_val_1 = hex_to_decimal(s_1);     long d_val_2 = hex_to_decimal(s_2);     cout &lt;&lt; &quot;val 1 address: &quot; &lt;&lt; d_val_1 &lt;&lt; endl;     cout &lt;&lt; &quot;val 2 address: &quot; &lt;&lt; d_val_2 &lt;&lt; endl;     if(d_val_1 &gt; d_val_2){         cout &lt;&lt; &quot;val 1 address is greater than val 2&quot;;     }     else{         cout &lt;&lt; &quot;val 2 address is greater than val 1&quot;;     }     return 0; }   long hex_to_decimal (string s_num){ //string s_num = to_string(num);     long d_num = 0;     char current;     long base;     for (int i = 2; i &lt; s_num.length(); i++) {         current = s_num.at(i);         base = (long) pow(16, s_num.length()-1-i);         switch (current) {             case &#39;a&#39;:                 d_num += 10 * base;                 break;             case &#39;b&#39;:                 d_num += 11 * base;                 break;             case &#39;c&#39;:                 d_num += 12 * base;                 break;             case &#39;d&#39;:                 d_num += 13 * base;                 break;             case &#39;e&#39;:                 d_num += 14 * base;                 break;             case &#39;f&#39;:                 d_num += 15 * base;                 break;             default:                 d_num += (stoi(&amp;current)) * base;                 break;         }     }     return d_num; } Easier way for hex to decimal: 1 2 3 4 stringstream ss; ss &lt;&lt; p_val_1; long add_1; ss &gt;&gt; hex &gt;&gt; add_1;" />
+<link rel="canonical" href="http://localhost:4000/2015/05/25/simple-memory-address-to-decimal-cpp.html" />
+<meta property="og:url" content="http://localhost:4000/2015/05/25/simple-memory-address-to-decimal-cpp.html" />
+<meta property="og:site_name" content="Yi Xia" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-05-25T00:00:00+08:00" />
+<script type="application/ld+json">
+{"name":null,"description":"This program compares the memory addresses of two different variables on the stack and prints out the order of their addresses in decimal. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 // Comment // EXPECTING CHANGES // //  pointer_practice.cpp //  Hello Pointer // //  Created by Yi Xia on 5/23/15. //  Copyright (c) 2015 Yi Xia. All rights reserved. //   #include &lt;iostream&gt; #include &lt;cmath&gt; #include &lt;sstream&gt; #include &lt;cstdlib&gt;   using namespace std;   long hex_to_decimal(string s_num);   int main(int argc, const char * argv[]) {     int val_1 = 10;     int val_2 = 15;     int *p_val_1 = &amp;val_1;     int *p_val_2 = &amp;val_2;     stringstream ss;     ss &lt;&lt; p_val_1;     string s_1;     ss &gt;&gt; s_1;     ss.clear();     ss &lt;&lt; p_val_2;     string s_2;     ss &gt;&gt; s_2;     cout &lt;&lt; &quot;val 1 address: &quot; &lt;&lt; s_1 &lt;&lt; endl;     cout &lt;&lt; &quot;val 2 address: &quot; &lt;&lt; s_2 &lt;&lt; endl;     long d_val_1 = hex_to_decimal(s_1);     long d_val_2 = hex_to_decimal(s_2);     cout &lt;&lt; &quot;val 1 address: &quot; &lt;&lt; d_val_1 &lt;&lt; endl;     cout &lt;&lt; &quot;val 2 address: &quot; &lt;&lt; d_val_2 &lt;&lt; endl;     if(d_val_1 &gt; d_val_2){         cout &lt;&lt; &quot;val 1 address is greater than val 2&quot;;     }     else{         cout &lt;&lt; &quot;val 2 address is greater than val 1&quot;;     }     return 0; }   long hex_to_decimal (string s_num){ //string s_num = to_string(num);     long d_num = 0;     char current;     long base;     for (int i = 2; i &lt; s_num.length(); i++) {         current = s_num.at(i);         base = (long) pow(16, s_num.length()-1-i);         switch (current) {             case &#39;a&#39;:                 d_num += 10 * base;                 break;             case &#39;b&#39;:                 d_num += 11 * base;                 break;             case &#39;c&#39;:                 d_num += 12 * base;                 break;             case &#39;d&#39;:                 d_num += 13 * base;                 break;             case &#39;e&#39;:                 d_num += 14 * base;                 break;             case &#39;f&#39;:                 d_num += 15 * base;                 break;             default:                 d_num += (stoi(&amp;current)) * base;                 break;         }     }     return d_num; } Easier way for hex to decimal: 1 2 3 4 stringstream ss; ss &lt;&lt; p_val_1; long add_1; ss &gt;&gt; hex &gt;&gt; add_1;","author":null,"@type":"BlogPosting","url":"http://localhost:4000/2015/05/25/simple-memory-address-to-decimal-cpp.html","publisher":null,"image":null,"headline":"Simple Memory Address to Decimal C++","dateModified":"2015-05-25T00:00:00+08:00","datePublished":"2015-05-25T00:00:00+08:00","sameAs":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2015/05/25/simple-memory-address-to-decimal-cpp.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</html>
