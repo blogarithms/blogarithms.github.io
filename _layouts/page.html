@@ -2,20 +2,16 @@
 layout: default
 ---
 
-  <div id="page">
-    <header class="page-header">
-      <h2>{{ page.title }}</h2>
-    </header>
-
-    <article class="page-content">
-      {{ content }}
-    </article>
 
 
-  </div><!-- end page content -->
+<div class="{{ page.title | downcase }} page-heading">
+  <h2>{{ page.title }}</h2>
+  {{ content }}
+</div>
 
+{% if site.owner.disqus-shortname and page.comments == true %}
+<div id="disqus_thread"></div>
+{% include disqus.html %}
+{% endif %}
 
-  {% if site.owner.disqus-shortname and page.comments == true %}
-  <div id="disqus_thread"></div>
-  {% include disqus.html %}
-  {% endif %}
+{% include google_analytics.html %}

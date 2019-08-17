@@ -1,0 +1,100 @@
+---
+layout: default
+---
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.w3-btn {margin-bottom:10px;}
+</style>
+
+<h4>
+  I'm <a style="color: blue;" href="https://linkedin.com/in/AdityaRamesh1998/" target="_blank">Aditya Ramesh</a>! 
+  <br> 
+  I enjoy writing code, blogging, eating and sketching. Oh, and I love puppies!
+  <br>
+  New to my blog? You should probably <a style="color: blue;" href="/starthere/">start here!</a>
+</h4>
+<hr>
+
+
+<!-- HTML elements for search -->
+<div id="search-container">
+  <input type="text" id="search-input" placeholder="&nbsp; Search for a post..." style="display:table-cell; width:100%">
+  <ul id="results-container"></ul>
+</div>
+
+<!-- script pointing to jekyll-search.js -->
+<script src="{{ site.baseurl }}/simple-jekyll-search.min.js"></script>
+
+<!-- Configuration -->
+<script>
+SimpleJekyllSearch({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('results-container'),
+  json: '/search.json',
+  searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+  noResultsText: "No post found!",
+  fuzzy: true
+})
+</script>
+
+
+
+<br/>
+{% for post in paginator.posts %}
+
+{% unless post.category == 'updates' %}
+<article class="home">
+  <!-- <h6> -->
+ <!-- <p class="post-date">
+    {% assign d = post.date | date: "%d" | plus:'0' %}
+    {{ post.date | date: "%B" }}
+    {% case d %}
+    {% when 1 or 21 or 31 %}{{ d }}st,
+    {% when 2 or 22 %}{{ d }}nd,
+    {% when 3 or 23 %}{{ d }}rd,
+    {% else %}{{ d }}th,
+    {% endcase %}
+    {{ post.date | date: "%Y" }}
+  </p> -->
+  <!-- </h6> -->
+  {% include post-section.html %}
+</article>
+{% endunless %}
+{% endfor %}
+
+<hr/>
+
+<ul class="pager"> 
+
+  {% if paginator.previous_page %}
+  <li class="previous">
+    {% if paginator.previous_page == 1 %}
+    <a href="{{ site.url }}/#blog">&larr; Newer</a>
+    {% else %}
+    <a href="{{ site.url }}/{{ site.paginate_path | replace: ':num', paginator.previous_page }}">&larr; Newer</a>
+    {% endif %}
+  </li>
+  {% else %}
+  <li class="previous disabled">
+    <a>&larr; Newer</a>
+  </li>
+  {% endif %}
+  
+  <li>
+    <span class="page_number">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  </li>
+
+  {% if paginator.next_page %}
+  <li class="next">
+    <a href="{{ site.url }}/{{ site.paginate_path | replace: ':num', paginator.next_page }}">Older &rarr;</a>
+  </li>
+  {% else %}
+  <li class="next disabled">
+    <a>Older &rarr;</a>        
+  </li>
+  {% endif %}
+
+</ul>
+
+{% include google_analytics.html %}

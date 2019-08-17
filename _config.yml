@@ -4,21 +4,28 @@
 ####################################
 #
 title: Blogarithms
-email:
-description: The personal blog of Aditya Ramesh.
-url: https://blogarithms.github.io
-keywords: ["blog", "jekyll"]
+email: ramesh.aditya@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  The personal blog of Aditya Ramesh
+url: https://blogarithms.github.io # the base hostname & protocol for your site
 
 #
 ###################################
 # Jekyll configuration
 ####################################
 #
-timezone:          Europe/Paris
-markdown:          kramdown
-highlighter:       rouge
+markdown:    kramdown  
+highlighter: rouge
+
 excerpt_separator: <!--more-->
 permalink:         /articles/:year-:month/:title
+paginate: 6
+paginate_path: "page/:num"
+
+BASE_PATH : http://blogarithms.github.io
+sass:
+  sass_dir: _sass
+  style: compressed
 
 kramdown:
   auto_ids: true
@@ -26,35 +33,53 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   enable_coderay: false
+  # pygments: true
+  input: GFM
+  # syntax_highlighter: rouge
+
+  # # Rouge Highlighter in Kramdown › http://kramdown.gettalong.org/syntax_highlighter/rouge.html
+  # # span, block element options fall back to global
+  # syntax_highlighter_opts:
+  #   # Rouge Options › https://github.com/jneen/rouge#full-options
+  #   css_class: 'highlight'
+  #   #line_numbers: true # bad idea, spans don't need linenos and would inherit this option
+  #   span:
+  #     line_numbers: false
+  #   block:
+  #     line_numbers: true
+  #     start_line: 1
+  
+# This will require each of these plugins automatically.
+plugins:
+  - jekyll-gist
+  - jekyll-paginate
+  - jemoji
+  - jekyll-seo-tag
 
 #
 ###################################
-# Site Owner configuration
+# Jekyll configuration
 ####################################
 #
-
-# SWE Intern Cisco '18, Deloitte '17 | Published Algorithm Blogger, Topcoder
 owner:
   name: Blogarithms
+  job: The personal blog of Aditya Ramesh
   avatar: leonids-logo.png
-  job: "Aditya Ramesh's Blog"
   bio: "SWE Intern, D. E. Shaw | Cisco | Deloitte | Algorithm Blogger, Topcoder"
   email: ramesh.aditya@gmail.com
-  disqus-shortname:
-  twitter: AdityaRamesh98
+  disqus-shortname: 
+  twitter: AdityaRamesh98 #username
   facebook: #username
   google:
-    plus: #username
+    plus:  #username
     analytics: UA-109024554-3
     verify:
     ad-client:
     ad-slot:
   bing-verify:
-  github: RameshAditya
-  gitlab: #username
+  github: RameshAditya #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: adityaramesh1998
-  skype: #username
+  linkedin: adityaramesh1998 #username
   xing: #username
   instagram: #username
   lastfm: #username
@@ -65,9 +90,11 @@ owner:
   dribbble: #username
   youtube: #username
   soundcloud: #username
-  weibo: #username
+  weibo:  #username
   flickr: #username
-  500px: #username
   codepen: #username
-  reddit: #username
-  telegram: #username
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
+
+

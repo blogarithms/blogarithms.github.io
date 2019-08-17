@@ -1,0 +1,710 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"get_formatted_name\tfunction"
+			],
+			[
+				"midd",
+				"middle_name"
+			],
+			[
+				"mid",
+				"middle_name"
+			],
+			[
+				"firs",
+				"first_name\tparam"
+			],
+			[
+				"au",
+				"author_name\tstatement"
+			],
+			[
+				"favo",
+				"favorite_book\tfunction"
+			],
+			[
+				"books",
+				"books"
+			],
+			[
+				"auto",
+				"authorFirstName"
+			],
+			[
+				"aut",
+				"authorFirstName"
+			],
+			[
+				"re",
+				"releaseYear"
+			],
+			[
+				"num",
+				"numOfBooks"
+			],
+			[
+				"nu",
+				"numOfBooks"
+			],
+			[
+				"size",
+				"size"
+			],
+			[
+				"autho",
+				"authorLastName"
+			],
+			[
+				"fil",
+				"fileName"
+			],
+			[
+				"suff",
+				"suffixRegular"
+			],
+			[
+				"su",
+				"suffixRegular"
+			],
+			[
+				"pr",
+				"printArray"
+			],
+			[
+				"mat",
+				"matrix_utils"
+			],
+			[
+				"matrix",
+				"matrix_utils"
+			],
+			[
+				"arr",
+				"array_utils"
+			],
+			[
+				"a",
+				"array_utils"
+			],
+			[
+				"array",
+				"array_utils"
+			],
+			[
+				"TO",
+				"TORR_TO_ATM"
+			],
+			[
+				"hy",
+				"hyQueue"
+			],
+			[
+				"ox",
+				"oxQueue"
+			],
+			[
+				"wri",
+				"writerNum"
+			],
+			[
+				"reader",
+				"readerCount"
+			],
+			[
+				"er",
+				"errorMessage"
+			],
+			[
+				"err",
+				"errorMessage"
+			],
+			[
+				"NO",
+				"NO_ERROR"
+			],
+			[
+				"error",
+				"errorMessage"
+			],
+			[
+				"begin",
+				"\\begin{enumerate}                                 \tlatex-document"
+			],
+			[
+				"has",
+				"hasPipedInput"
+			],
+			[
+				"temp",
+				"tempArg"
+			],
+			[
+				"spli",
+				"splitCommand"
+			],
+			[
+				"spl",
+				"splitCommand"
+			],
+			[
+				"cm",
+				"cmdlist"
+			],
+			[
+				"chi",
+				"childCredit"
+			],
+			[
+				"total",
+				"totalTax"
+			],
+			[
+				"tot",
+				"totalTax"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "_posts/2018-4-22-vim-tips.md",
+			"settings":
+			{
+				"buffer_size": 2468,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_posts/2018-01-11-mac-application.md",
+			"settings":
+			{
+				"buffer_size": 3482,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_drafts/2018-06-20-machine-learning.md",
+			"settings":
+			{
+				"buffer_size": 1098,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "## Hoare logic[^1]"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				"PdfLaTeX"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Disable Package"
+			],
+			[
+				"lis",
+				"Permute Lines: Shuffle"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"UI",
+				"UI: Select Color Scheme"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ui",
+				"UI: Select Color Scheme"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Markdown Codeblock"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"manage packa",
+				"Package Control: List Unmanaged Packages"
+			]
+		],
+		"width": 476.0
+	},
+	"console":
+	{
+		"height": 137.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/yixia/geeknerd.github.io"
+	],
+	"file_history":
+	[
+		"/Users/yixia/geeknerd.github.io/_posts/2018-06-18-alfred-permission.md",
+		"/Users/yixia/geeknerd.github.io/_posts/2018-01-09-sublime-text.md",
+		"/Users/yixia/geeknerd.github.io/_posts/2018-4-22-vim-tips.md",
+		"/Users/yixia/Downloads/ddd/团子系列/团子系列/毛衣少女/sanjiery_tumblr_com02.jpg",
+		"/Users/yixia/Documents/python_work/ch7.py",
+		"/Users/yixia/Documents/python_work/ch5.py",
+		"/Users/yixia/Documents/python_work/ch6.py",
+		"/Users/yixia/Downloads/mlb.c",
+		"/Users/baobao/Documents/python_work/bicycles.py",
+		"/Users/baobao/Documents/python_work/squares.py",
+		"/Users/baobao/Library/Application Support/Sublime Text 3/Packages/User/Python3.sublime-build",
+		"/Users/baobao/Documents/2018_Spring/155E/Final_Draft/bookDriver.c",
+		"/Users/baobao/Documents/2018_Spring/155E/Final_Draft/book.c",
+		"/Users/baobao/Library/Caches/Transmit/2710DD17-73FF-4EA5-99B2-F96361679AC5/cse.unl.edu/home/grad/Classes/cse155e/handin/E2/celliott/bookDriver.c",
+		"/Users/baobao/Library/Caches/Transmit/87330A2D-36A8-4434-AB53-706CBD8DC681/cse.unl.edu/home/grad/Classes/cse155e/handin/E2/esorensen/bookDriver.c",
+		"/Users/baobao/Library/Caches/Transmit/11D40B7D-DFFF-45EB-BE22-0D6D6A0C3D0E/cse.unl.edu/home/grad/Classes/cse155e/handin/E2/mlange/bookDriver.c",
+		"/Users/baobao/Library/Caches/Transmit/125D40ED-CDE6-4F2B-8DC1-6BDE25A61254/cse.unl.edu/home/grad/Classes/cse155e/handin/E2/mlange/book.c",
+		"/Users/baobao/Library/Caches/Transmit/A1A60C5C-D3A8-4201-B455-83B2993F3394/cse.unl.edu/home/grad/Classes/cse155e/handin/E2/pcirco/bookDriver.c",
+		"/Users/baobao/Library/Caches/Transmit/4272057E-E97F-44D1-9E83-C35DA5CB0317/cse.unl.edu/home/grad/Classes/cse155e/handin/E2/pcirco/book.c",
+		"/Users/baobao/Documents/2018_Spring/155E/hw6/stadium.c",
+		"/Users/baobao/Documents/2018_Spring/155E/hw6/stadium.h",
+		"/Users/baobao/Documents/2018_Spring/155E/hw7/weather.c",
+		"/Users/yixia/Documents/2018_Spring/155E/hw6/stadium.h",
+		"/Users/yixia/Documents/2018_Spring/155E/hw7/weather.c",
+		"/Users/yixia/Documents/2018_Spring/155E/hw7/rkirkpatrick/weather.c",
+		"/Users/yixia/Downloads/202610, completed/part2/readme.txt",
+		"/Users/yixia/Documents/2018_Spring/851/PA4/yxia_pa4/part1/main.c",
+		"/Users/yixia/Documents/2018_Spring/851/PA4/yxia_pa4/part2/main.c",
+		"/Users/yixia/Documents/2018_Spring/851/PA4/yxia_pa4/README",
+		"/Users/yixia/Documents/2018_Spring/851/PA4/yxia_pa4/readme.txt",
+		"/Users/yixia/Documents/2018_Spring/155E/hw6/integrate.c",
+		"/Users/yixia/Documents/2018_Spring/155E/hw6/stadium.c",
+		"/Users/yixia/Documents/2018_Spring/155E/hw6/mlange/integrate.h",
+		"/Users/yixia/Documents/2018_Spring/155E/hw6/mlange/integrate.c",
+		"/Users/yixia/Library/Caches/Transmit/B474F32A-B138-4558-93C3-CFE189200381/cse.unl.edu/home/grad/Classes/cse155e/handin/6/yxia/stadium.c",
+		"/Users/yixia/Library/Caches/Transmit/9E30BC08-E3BD-4FA2-9A3A-D588F74513D7/cse.unl.edu/home/grad/Classes/cse155e/handin/6/mchontos/stadium.c",
+		"/Users/yixia/Library/Caches/Transmit/18D2DF96-CA43-46F2-A38E-1DE1E811B20B/cse.unl.edu/home/grad/Classes/cse155e/handin/6/yxia/stadium.c",
+		"/Users/yixia/Library/Caches/Transmit/0A685A85-41B5-4A17-A2D4-6068178921C9/cse.unl.edu/home/grad/Classes/cse155e/handin/6/celliott/stadium.c",
+		"/Users/yixia/Documents/2018_Spring/155E/hw6/integrate.h",
+		"/Users/yixia/Library/Caches/Transmit/3955D4A0-C3B6-4BE4-8BF7-9EFAD5FAB66A/cse.unl.edu/home/grad/Classes/cse155e/handin/6/guriarte/integrate.c",
+		"/Users/yixia/Library/Caches/Transmit/525BF3C0-5C67-4C32-9E37-B897CFE1FB44/cse.unl.edu/home/grad/Classes/cse155e/handin/6/guriarte/integrate.h",
+		"/Users/yixia/Library/Caches/Transmit/DF252C78-A3E5-48E8-A07A-A460D276B76F/cse.unl.edu/home/grad/Classes/cse155e/handin/6/arai/integrate.h",
+		"/Users/yixia/Library/Caches/Transmit/45EC52CB-EBE1-4AF6-BAC1-80D12CDFAE78/cse.unl.edu/home/grad/Classes/cse155e/handin/6/arai/integrate.c",
+		"/Users/yixia/Library/Caches/Transmit/923A3EB1-70CD-4ACA-A663-A4BE3FF970D4/cse.unl.edu/home/grad/Classes/cse155e/handin/6/yxia/integrate.c",
+		"/Users/yixia/Library/Caches/Transmit/8CE19E74-2D08-45CA-B8CE-6E1098096359/cse.unl.edu/home/grad/Classes/cse155e/handin/6/yxia/integrate.h",
+		"/Users/yixia/Library/Caches/Transmit/497AA00F-7A0C-46E4-9CA5-AA9FA541D5E2/cse.unl.edu/home/grad/Classes/cse155e/handin/6/arai/integrate.h",
+		"/Users/yixia/Library/Caches/Transmit/800A82FA-FDFA-4DF9-B115-8F5D5F3CDAD1/cse.unl.edu/home/grad/Classes/cse155e/handin/6/yxia/integrate.h",
+		"/Users/yixia/Documents/2018_Spring/155E/hw6/integrateTest.c",
+		"/Users/yixia/Library/Caches/Transmit/EB41AFF6-A8D3-4C9F-8592-7728B412F67C/cse.unl.edu/home/grad/Classes/cse155e/handin/6/yxia/stadium.c",
+		"/Users/yixia/Library/Caches/Transmit/1BCC055F-3DAD-4FAB-9BB9-77861048C3F8/cse.unl.edu/home/grad/Classes/cse155e/handin/6/yxia/stadium.h",
+		"/Users/yixia/Library/Caches/Transmit/AAA5A577-7198-4CF8-9222-44857DF9113A/cse.unl.edu/home/grad/Classes/cse155e/handin/6/yxia/stadium.h",
+		"/Users/yixia/Library/Caches/Transmit/B7917F52-7BBF-495D-B12C-2956339FD238/cse.unl.edu/home/grad/Classes/cse155e/handin/6/yxia/stadium.c",
+		"/Users/yixia/Library/Caches/Transmit/6FF80EC4-3D2C-4897-ABB3-767E481961F6/cse.unl.edu/home/grad/Classes/cse155e/handin/6/yxia/integrate.c",
+		"/Users/yixia/Library/Caches/Transmit/F1E3F9B8-EE65-464D-B816-E5AD7B917FB7/cse.unl.edu/home/grad/Classes/cse155e/handin/6/caugustyn/stadium.c",
+		"/Users/yixia/Library/Caches/Transmit/32118971-7CE1-4881-B653-5DE743E0A90E/cse.unl.edu/home/grad/Classes/cse155e/handin/6/yxia/stadium.c",
+		"/Users/yixia/Library/Caches/Transmit/133FA634-A22A-493E-B12A-F724A3404CAD/cse.unl.edu/home/grad/Classes/cse155e/handin/6/yxia/stadium.c",
+		"/Users/yixia/Library/Caches/Transmit/2185137E-46C5-4980-9FBE-7C1C03E374BD/cse.unl.edu/home/grad/Classes/cse155e/handin/6/yxia/stadium.c",
+		"/Users/yixia/Documents/2018_Spring/155E/Final_Draft/bookDriver.c",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab15/insertGame.c",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab15/listGames.c",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab15/games.c",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab13/mlb_demo.c",
+		"/Users/yixia/Documents/2018_Spring/155E/hw6/weather.c",
+		"/Users/yixia/doc/fuf.txt",
+		"/Users/yixia/Documents/2018_Spring/155E/Final_Draft/book.c",
+		"/Users/yixia/Documents/2018_Spring/155E/hw4/array_utils.c",
+		"/Users/yixia/Documents/2018_Spring/155E/hw2/integrate.c",
+		"/Users/yixia/Documents/2018_Spring/155E/hw2/agm.c",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab13/mlb.c",
+		"/Users/yixia/Documents/2018_Spring/155E/Final_Draft/book.h",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab12/palindrome.c",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab11/runRss.c",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab11/rss.c",
+		"/Users/yixia/Documents/2018_Spring/155E/hw5/string_utils.c",
+		"/Users/yixia/Downloads/sudokuVerifier.c",
+		"/Users/yixia/Documents/2018_Spring/155E/hw5/sudokuVerifier.c",
+		"/Users/yixia/Documents/2018_Spring/828/hw4/hw4_ns.tex",
+		"/Users/yixia/Documents/2018_Spring/828/hw3/hw3_ns.tex",
+		"/Users/yixia/Downloads/stadium.h",
+		"/Users/yixia/Documents/2018 Spring/155E/hw6/stadium.c",
+		"/Users/yixia/Documents/2018 Spring/155E/hw6/stadium.h",
+		"/Users/yixia/Documents/2018 Spring/155E/hw6/integrate.c",
+		"/Users/yixia/Documents/2018 Spring/155E/hw5/dnaMutator.c",
+		"/Users/yixia/Documents/2018 Spring/155E/hw5/sudokuVerifier.c",
+		"/Users/yixia/Documents/2018 Spring/155E/hw5/string_utils.c",
+		"/Users/yixia/Library/Caches/Transmit/6CE7B9D1-D9ED-481E-B6AB-5E3C0C3B733F/cse.unl.edu/home/grad/Classes/cse155e/handin/5/gstock/string_utils.c",
+		"/Users/yixia/Library/Caches/Transmit/EBF4172D-2620-4F5B-A834-D653BB7D2747/cse.unl.edu/home/grad/Classes/cse155e/handin/5/zjscott/string_utils.c",
+		"/Users/yixia/Library/Caches/Transmit/6BE01260-9BF8-4957-B1AC-0D2EDE0ADC02/cse.unl.edu/home/grad/Classes/cse155e/handin/5/tfulton/string_utils.c",
+		"/Users/yixia/Documents/2018 Spring/155E/hw5/dna02.txt",
+		"/Users/yixia/Documents/2018 Spring/155E/hw4/array_utils.c",
+		"/Users/yixia/fff/呆萌67/2017年11月整合67套.txt",
+		"/Users/yixia/Downloads/codebeautify.c",
+		"/Users/yixia/Documents/2018 Spring/828/proj/proj_proposal.tex",
+		"/Users/yixia/Library/Caches/Transmit/24E45766-9F9C-43B3-954E-DE1E9958E9C9/cse.unl.edu/home/grad/Classes/cse155e/handin/5/oramirezza/string_utils.c",
+		"/Users/yixia/Library/Caches/Transmit/25BB33B3-A1D2-454C-B473-032051DA4010/cse.unl.edu/home/grad/Classes/cse155e/handin/5/yxia/test_main.c",
+		"/Users/yixia/Documents/2018 Spring/155E/hw5/test_main.c",
+		"/Users/yixia/Documents/2018 Spring/155E/CSCE155-C-Lab13/mlb.c",
+		"/Users/yixia/Documents/2018 Spring/155E/CSCE155-C-Lab13/mlb.h",
+		"/Users/yixia/Documents/2018 Spring/155E/CSCE155-C-Lab13/mlb_demo.c",
+		"/Users/yixia/Documents/2018 Spring/828/proj/workspace/NFA-DFA/input3.txt",
+		"/Users/yixia/Documents/2018 Spring/828/proj/workspace/NFA-DFA/sampleInput.txt",
+		"/Users/yixia/geeknerd.github.io/_drafts/2018-1-26-linux-tips.md",
+		"/Users/yixia/Documents/2018 Spring/828/proj/workspace/NFA-DFA/input2.txt",
+		"/Users/yixia/Documents/2018 Spring/828/proj/workspace/NFA-DFA/input1.txt",
+		"/Users/yixia/fff/具m/PR社完具少女W(完具M)112套/密码.txt",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab10/stateData.c",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab10/mlb.c",
+		"/Users/yixia/Documents/2018_Spring/868/final",
+		"/Users/yixia/Documents/2018_Spring/155E/hw5/dnaMutator.c",
+		"/Users/yixia/Documents/2018_Spring/851/PA4/snayak_pa4/part1/part1.c",
+		"/Users/yixia/Documents/2018_Spring/851/PA4/snayak_pa4/part1/correct.txt",
+		"/Users/yixia/Documents/2018_Spring/851/OS/Sampashree/PAS/snayak_pa4/part1/part1.c",
+		"/Users/yixia/Documents/2018_Spring/851/OS/Sampashree/PAS/snayak_pa4/ReadMe.txt",
+		"/Users/yixia/Library/Caches/Transmit/FF122669-113E-4512-879D-B226AF845003/cse.unl.edu/home/grad/Classes/cse155e/section153.txt",
+		"/Users/yixia/Library/Caches/Transmit/0DC5B645-D68D-4A9E-8934-B3F8641C970A/cse.unl.edu/home/ugrad/yxia/155e/CSCE155-C-Lab15/insertGame.c",
+		"/Users/yixia/Library/Caches/Transmit/A7B717B2-4308-4064-B549-2E6DB1C0DB87/cse.unl.edu/home/ugrad/yxia/155e/CSCE155-C-Lab15/games.c",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab15/odbc_utils.c",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab15/games.h",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab15/databaseInfo.h",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab15/videoGames.sql",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab15/makefile",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab15/odbc_utils.h",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab06/flowers.c",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab12/suffix.c",
+		"/Users/yixia/Documents/Downloads/Criminal.Minds.S03.DVDRip.XviD-MiXED/criminal.minds.s03e14.dvdrip.xvid.repack-orpheus.chs_en.srt",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab05/physicsCalc.c",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab05/sine.c",
+		"/Users/yixia/Documents/2018_Spring/155E/CSCE155-C-Lab06/florist.c"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "_posts/2018-4-22-vim-tips.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2468,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1100,
+								1100
+							]
+						],
+						"settings":
+						{
+							"is_init_dirty_state": true,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/MarkdownEditing/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_posts/2018-01-11-mac-application.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3482,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2308,
+								2308
+							]
+						],
+						"settings":
+						{
+							"is_init_dirty_state": false,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/MarkdownEditing/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 343.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "_drafts/2018-06-20-machine-learning.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1098,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								184,
+								184
+							]
+						],
+						"settings":
+						{
+							"is_init_dirty_state": false,
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/MarkdownEditing/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 102.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 102.0
+	},
+	"pinned_build_system": "Packages/User/Python3.sublime-build",
+	"project": "blog.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/CSCE155-C-Lab06/flowers.h"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 359.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 262.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

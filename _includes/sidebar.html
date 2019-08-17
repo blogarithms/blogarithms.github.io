@@ -1,27 +1,106 @@
-{% if page.author %} {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %} {% endif %}
+{% if page.author %}
+  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
+{% endif %}
 
+<!-- <div class="header">
 
-<div class="cover-card table-cell table-middle">
   {% if author.avatar %}
-  <a href="{{ site.url }}/">
+  <div class="row visible-md-block visible-lg-block">
+    <img class="author-avatar" src="{{ site.url }}/img/avatar.jpg" alt="{{ author.name | downcase }}">
+  </div>
+  {% endif %}
+  <div class="row">
+    <a href="{{ site.url }}/" class="brand-title">{{ author.name }}</a>
+    <span class="brand-tagline">{{ author.job }}</span>
+    <span class="brand-tagline">{{ author.bio }}</span>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+        <a href="{{ site.url }}/">home</a>
+        <span>/</span>
+        </li>
+        
+        <!-- test different order -->
+        <!-- <li class="nav-item">
+          <a href="{{ site.url }}/resume">Resume</a>
+          <span>/</span>
+        </li>
+        <li class="nav-item">
+          <a href="{{ site.url }}/archive">Archive</a>
+          <span>/</span>
+        </li>
+        <li class="nav-item">
+          <a href="{{ site.url }}/categories">Categories</a>
+          <span>/</span>
+        </li> -->
+
+        <!--
+        {% for page in site.pages %} {% if page.title %}
+        <li class="nav-item">
+          <a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>{% unless forloop.last %} <span>/</span>{% endunless %}
+        </li>
+        {% endif %} {% endfor %}
+        -->
+        
+<!--       </ul>
+    </nav>
+    {% include social-links.html %}
+  </div> -->
+
+<!-- </div> --> 
+
+
+<div class="cover-card table-cell table-middle"">
+  {% if author.avatar %}
+  <!-- <a href="{{ site.url }}/"> -->
     <img src="{{ site.url }}/img/{{ author.avatar }}" alt="" class="avatar">
-  </a>
+  <!-- </a> -->
   {% endif %}
   <a href="{{ site.url }}/" class="author_name">{{ author.name }}</a>
   <span class="author_job">{{ author.job }}</span>
   <span class="author_bio mbm">{{ author.bio }}</span>
+  
+
+
   <nav class="nav">
-    <ul class="nav-list">
-      <li class="nav-item">
+      <ul class="nav-list">
+        <li class="nav-item">
         <a href="{{ site.url }}/">home</a>
-      </li>
-      {% for page in site.pages %} {% if page.title %}
-      <li class="nav-item">
-        <a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
-      </li>
-      {% endif %} {% endfor %}
-    </ul>
-  </nav>
+        <span>/</span>
+        </li>
+        
+        <!-- test different order -->
+        <li class="nav-item">
+          <a href="{{ site.url }}/resume">About Me</a>
+          <span>/</span>
+        </li>
+        <li class="nav-item">
+          <a href="{{ site.url }}/archive">All Posts</a>
+          <span>/</span>
+        </li>
+        <li class="nav-item">
+          <a href="{{ site.url }}/categories">Categories</a>
+          <span>/</span>
+        </li>
+
+        <li class="nav-item">
+        <a href="{{ site.url }}/starthere">Start Here</a>
+        <span>/</span>
+        </li>
+
+        <!--
+        {% for page in site.pages %} {% if page.title %}
+        <li class="nav-item">
+          <a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>{% unless forloop.last %} <span>/</span>{% endunless %}
+        </li>
+        {% endif %} {% endfor %}
+        -->
+        
+     </ul>
+    </nav>
+
+
+
   {% include social-links.html %}
 
 <hr>
@@ -36,8 +115,6 @@
 <form action="https://github.us20.list-manage.com/subscribe/post?u=f76a37c2add694fe651b1b1c7&amp;id=b89b3aeeb8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
   <label for="mce-EMAIL" style="color: #8d7edc; font-family: sans-serif; font-style: sans-serif;">Never miss a blog post now!</label>
-  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email address" required>
-  <br><br>
     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f76a37c2add694fe651b1b1c7_b89b3aeeb8" tabindex="-1" value=""></div>
     <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="w3-button w3-white w3-border w3-medium button"></div>
@@ -46,10 +123,49 @@
 <!-- </div> -->
 
 <!--End mc_embed_signup-->
+<br><br>
 
 
+<label for="mce-EMAIL" style="color: #8d7edc; font-family: sans-serif; font-style: sans-serif;">Blog Post Tags - </label>
 
+<nav class="nav">
+      <ul class="nav-list">
+        
+        <li class="nav-item">
+          <a href="/categories/#algorithm">Algorithm</a>
+          <span>/</span>
+        </li>
+
+        <li class="nav-item">
+        <a href="/categories/#development">Development</a>
+        <span>/</span>
+        </li>
+        
+        <!-- test different order -->
+        <li class="nav-item">
+        <a href="/categories/#open%20source">Open Source</a>
+        <span>/</span>
+        </li>
+
+        <li class="nav-item">
+        <a href="/categories/#personal">Personal</a>
+        <span>/</span>
+        </li>
+
+        <li class="nav-item">
+        <a href="/categories/#speaking">Speaking</a>
+        <span>/</span>
+        </li>
+        
+        <li class="nav-item">
+        <a href="/categories/#topcoder">Topcoder</a>
+        <span>/</span>
+        </li>
+
+     </ul>
+    </nav>
 
 
 
 </div>
+
