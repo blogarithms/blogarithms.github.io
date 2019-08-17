@@ -1,0 +1,127 @@
+---
+layout: default
+---
+<!-- Begin Mailchimp Signup Form -->
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%
+}
+</style>
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+  #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;
+    /*position: -webkit-sticky; position: sticky; top: 0; margin-top: 0; padding-top: 0;*/
+  }
+
+  /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+     We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://github.us20.list-manage.com/subscribe/post?u=f76a37c2add694fe651b1b1c7&amp;id=b89b3aeeb8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+  <label for="mce-EMAIL">Like Algorithms? Follow My Blog!</label>
+  <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email address goes here" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f76a37c2add694fe651b1b1c7_b89b3aeeb8" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.w3-btn {margin-bottom:10px;}
+</style>
+
+<h4>
+  I'm <a style="color: blue;" href="https://linkedin.com/in/AdityaRamesh1998/" target="_blank">Aditya Ramesh</a>! 
+  <br> 
+  I enjoy writing code, blogging, eating and sketching. Oh, and I love puppies!
+  <br>
+  Here's my technical portfolio - <a style="color: blue;" href="https://rameshaditya.com/" target="_blank">rameshaditya.com</a>
+</h4>
+<hr>
+
+
+<!-- <h3 style="display:inline;"> Tags:  &nbsp; &nbsp;</h3> -->
+<h5><b>Blog Post Tags - </b></h5>
+<p style="display: inline;">
+  <button class="w3-button w3-white w3-border w3-medium" onclick="location.href='/categories/#algorithm'"> Algorithm </button>
+  <button class="w3-button w3-white w3-border w3-medium" onclick="location.href='/categories/#development'"> Development </button>
+  <button class="w3-button w3-white w3-border w3-medium" onclick="location.href='categories/#open%20source'"> Open Source </button>
+  <button class="w3-button w3-white w3-border w3-medium" onclick="location.href='/categories/#personal'"> Personal </button>
+  <button class="w3-button w3-white w3-border w3-medium" onclick="location.href='/categories/#speaking'"> Speaking </button>
+  <button class="w3-button w3-white w3-border w3-medium" onclick="location.href='/categories/#topcoder'"> Topcoder </button>
+</p>
+
+<hr>
+<!-- <p class="post-cat"> Categories: Algorithm | Development | Open Source </p> -->
+
+{% for post in site.posts %}
+<section class="post">
+
+
+  <header class="post-header">
+    <p class="post-meta">
+      <span class="post-date">
+        {{ post.date | date: "%-d %b %Y" | upcase }}
+      </span>
+      {% if post.categories.size > 0 %}
+      •
+      {% for cat in post.categories %}
+        <a class="post-cat" href="{{ site.url }}/categories/#{{ cat }}">{{ cat }}</a>
+        {% unless forloop.last %}
+        <span>/</span>
+        {% endunless %}
+      {% endfor %}
+      {% endif %}
+    </p>
+    <h4>
+      <a href="{{ site.url }}{{ post.url }}" class="post-title" title="{{ post.title | escape }}">{{ post.title }}</a>
+      {% if post.link %}
+      <a class="post-title-link" href="{{ post.link }}" target="_blank" title="{{ post.title | escape }}"><i class="fa fa-external-link"></i></a>
+      {% endif %}
+    </h4>
+
+    {% if post.author %}
+      {% assign author = site.data.authors[post.author] %}
+    {% else %}
+      {% assign author = site.owner %}
+    {% endif %}
+
+    </header>
+
+    {% if post.excerpt %}
+    <div class="post-description">
+      <p>
+        {{ post.excerpt }}
+      </p>
+    </div>
+    {% endif %}
+
+    {% if post.image.feature %}
+    <div class="post-image-feature">
+      <img src=
+      {% if post.image.feature contains 'http' %}
+      "{{ post.image.feature }}"
+      {% else %}
+      "{{ site.url }}/img/{{ post.image.feature }}"
+      {% endif %}
+      alt="{{ post.title | escape }} feature image">
+
+      {% if post.image.credit %}
+      <span class="image-credit">Photo Credit: <a href="{{ post.image.creditlink }}">{{ post.image.credit }}</a></span>
+      {% endif %}
+      
+    </div><!-- /.image-wrap -->
+    {% endif %}
+
+    <hr style="border: 0; height: 1px; background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);">
+</section>
+{% endfor %}
+

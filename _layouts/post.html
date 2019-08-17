@@ -2,45 +2,31 @@
 layout: default
 ---
 
-
 <!-- Begin Mailchimp Signup Form -->
-<style>
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%
-}
-</style>
-<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-  #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;
-    /*position: -webkit-sticky; position: sticky; top: 0; margin-top: 0; padding-top: 0;*/
-  }
+  <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+  </style>
+  <div id="mc_embed_signup">
+  <form action="https://github.us20.list-manage.com/subscribe/post?u=f76a37c2add694fe651b1b1c7&amp;id=b89b3aeeb8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <div id="mc_embed_signup_scroll">
+    <label for="mce-EMAIL">Never miss a future blog post!</label>
+    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email address goes here" required>
+      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f76a37c2add694fe651b1b1c7_b89b3aeeb8" tabindex="-1" value=""></div>
+      <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+      </div>
+  </form>
+  </div>
 
-  /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-     We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
-<div id="mc_embed_signup">
-<form action="https://github.us20.list-manage.com/subscribe/post?u=f76a37c2add694fe651b1b1c7&amp;id=b89b3aeeb8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-    <div id="mc_embed_signup_scroll">
-  <label for="mce-EMAIL">Like Algorithms? Follow My Blog!</label>
-    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f76a37c2add694fe651b1b1c7_b89b3aeeb8" tabindex="-1" value=""></div>
-    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-    </div>
-</form>
-</div>
+  <!--End mc_embed_signup-->
+  
 
-<!--End mc_embed_signup-->
-
-
-<!--add a go-back button-->
-<a class="btn" href= "javascript:history.back()" >
-  Back
+<a class="btn" href= "{{ site.url }}/" >
+  Home
 </a>
-
-<!--show post image if exists-->
 {% if page.image.feature %}
 <div class="post-image-feature">
   <img class="feature-image" src=
@@ -49,7 +35,7 @@ html, body {
   {% else %}
   "{{ site.url }}/img/{{ page.image.feature }}"
   {% endif %}
-  alt="{{ page.title }} feature image">
+  alt="{{ page.title | escape }} feature image">
 
   {% if page.image.credit %}
   <span class="image-credit">Photo Credit: <a href="{{ page.image.creditlink }}">{{ page.image.credit }}</a></span>
@@ -57,61 +43,74 @@ html, body {
 </div><!-- /.image-wrap -->
 {% endif %}
 
-<div class="post">
+
+<div id="post">
   <header class="post-header">
-    <h2>{{ page.title }}</h2>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    <h1 title="{{ page.title | escape }}">{{ page.title }}</h1>
+    <span class="post-meta">
+      <span class="post-date">
+        {{ page.date | date: "%-d %b %Y" | upcase }}
+      </span>
+      •
+      {% include read_time.html %}
+    </span>
+
   </header>
 
   <article class="post-content">
     {{ content }}
   </article>
+    
+  <!-- Begin Mailchimp Signup Form -->
+  <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+  </style>
+  <div id="mc_embed_signup">
+  <form action="https://github.us20.list-manage.com/subscribe/post?u=f76a37c2add694fe651b1b1c7&amp;id=b89b3aeeb8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <div id="mc_embed_signup_scroll">
+    <label for="mce-EMAIL">Never miss a future blog post!</label>
+    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Your email address goes here" required>
+      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_f76a37c2add694fe651b1b1c7_b89b3aeeb8" tabindex="-1" value=""></div>
+      <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+      </div>
+  </form>
+  </div>
 
+  <!--End mc_embed_signup-->
 </div>
 
-<a class="btn" href= "javascript:history.back()" >
-  Back
-</a>
-<div class="share-icons">
-  <h6>SHARE ON</h6>
+
+
+<div class="share-buttons">
+  <h6>Share on: </h6>
   <ul>
     <li>
-      <a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" class="twitter btn" style="background-color: #77bcf1; color: $white; border-color: #77bcf1; &:visited { color: $white;border-color: #77bcf1;}&:hover {background-color: $white;color: #77bcf1;border-color: #77bcf1;}" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+      <a href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }}" class="twitter btn" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
     </li>
     <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" class="facebook btn" style="background-color: #627aac;color: $white;border-color: #627aac;&:visited {color: $white;border-color: #627aac;}&:hover {background-color: $white;color: #627aac;border-color: #627aac;}" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" class="facebook btn" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
     </li>
     <li>
-      <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" class="google-plus btn" style="background-color: #e36f60;color: $white;border-color: #e36f60;&:visited {color: $white;border-color: #e36f60;}&:hover {background-color: $white;color: #e36f60;border-color: #e36f60;}" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+      <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" class="google-plus btn" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
     </li>
     <li>
-      <a href="https://www.reddit.com/submit?url={{ site.url }}{{ page.url }}" class="reddit btn" style="background-color: #5f99cf;color: $white;border-color: #5f99cf;&:visited {color: $white;border-color: #5f99cf;}&:hover {background-color: $white;color: #5f99cf;border-color: #5f99cf;}" onmouseover="color: white;" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
+      <a href="https://news.ycombinator.com/submitlink?u={{ site.url }}{{ page.url }}" class="hacker-news btn" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
     </li>
-
     <li>
-      <a href="https://news.ycombinator.com/submitlink?u={{ site.url }}{{ page.url }}" class="hacker-news btn" style="background-color: #f60;color: $white;border-color: #f60;&:visited {color: $white;border-color: #f60;}&:hover {background-color: $white;color: #f60;border-color: #f60;}" title="Share on Hacker News"><i class="fa fa-hacker-news"></i><span> Hacker News</span></a>
+      <a href="https://www.reddit.com/submit?url={{ site.url }}{{ page.url }}" class="reddit btn" title="Share on Reddit"><i class="fa fa-reddit"></i><span> Reddit</span></a>
     </li>
-
   </ul>
-</div>
+</div><!-- end share-buttons -->
 
-
+<a class="btn" href= "{{ site.url }}/" >
+  Home
+</a>
 
 {% if site.owner.disqus-shortname and page.comments == true %}
 <div id="disqus_thread"></div>
 {% include disqus.html %}
 {% endif %}
-
-
-{% if site.related_posts.size > 0 %}
-<div class="related-articles">
-<h4>You might also enjoy</h4>
-  <ul>
-  {% for post in site.related_posts limit:5 %}
-    <li><span style="color: blue;"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></span></li>
-  {% endfor %}
-  </ul>
-</div><!-- /.related-articles -->
-{% endif %}
-
-{% include google_analytics.html %}

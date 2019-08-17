@@ -1,10 +1,5 @@
 # careers section data
 # if you don't have language feature(language.yml is empty), ignore "i18n" items
-- name: D. E. Shaw
-  link: http://www.deshaw.com/
-  date: May 2019 - July 2019 #<i class="fa fa-clock-o" aria-hidden="true" title="Until Now"></i>
-  job: Software Engineering Internship
-
 - name: Cisco
   link: http://www.cisco.com/
   date: May 2018 - July 2018 #<i class="fa fa-clock-o" aria-hidden="true" title="Until Now"></i>
