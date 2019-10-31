@@ -80,7 +80,7 @@ This is slightly trickier, as we're considering all the nodes that are OUTSIDE t
 
 But we can decompose this section of nodes as - (out[parent] + in[siblings])
 
-![](../../img/inoutdp.jpg)
+![DPIO](https://i.imgur.com/0FYyar8.jpg)
 
 The diagram illustrates this.
 
