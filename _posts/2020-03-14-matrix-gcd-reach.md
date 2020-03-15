@@ -84,8 +84,8 @@ And here's my as-code-golfy-as-possible imlementation -
 # 114 chars (can't do better, comment your code if you can down below)
 import math
 c=int
-ip=input
-for t in range(c(ip())):g=math.gcd(*map(c,ip().split()));print(["Yes","No"][g&(g-1)>0])
-   
+z=input
+for t in range(c(z())):g=math.gcd(*map(c,z().split()));print(["Yes","No"][g&(g-1)>0])
+
 ```
 
